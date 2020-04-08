@@ -29,8 +29,6 @@
 </template>
 
 <script>
-import "leaflet/dist/leaflet.css";
-
 import PlacesInput from "~/components/PlacesInput";
 
 export default {

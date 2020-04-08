@@ -1,5 +1,6 @@
 /* purgecss start ignore */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "leaflet/dist/leaflet.css";
 /* purgecss end ignore */
-@import 'tailwindcss/utilities';
+@import "tailwindcss/utilities";
