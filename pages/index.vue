@@ -9,8 +9,12 @@
                     ref="map"
                 >
                     <l-tile-layer
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        attribution="Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
+                        url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
+                        attribution="Map tiles by <a href='Stamen Design'></a> <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
+                        subdomains="abcd"
+                        minZoom="0"
+                        maxZoom="20"
+                        ext="png"
                     ></l-tile-layer>
                 </l-map>
             </div>

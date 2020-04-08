@@ -2,6 +2,7 @@ import Vue from "vue";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 import { Icon } from "leaflet";
 
+// Hack to get the icons to work on Prod. See vue2-leaflet docs for more info
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
     iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
