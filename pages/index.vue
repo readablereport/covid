@@ -15,7 +15,14 @@
                 </l-map>
             </div>
             <div style="width: 900px; padding-left: 200px;">
-                <input id="places-input" />
+                <places-input
+                    :model="places.value"
+                    :options="places.options"
+                    @onChange="handleLocationChange"
+                    @onSuggestions="handleOnSuggestions"
+                    @onClear="handleOnClear"
+                    @onCursorchanged="handleOnCursorchanged"
+                />
             </div>
         </div>
     </div>
@@ -23,69 +30,40 @@
 
 <script>
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-import * as places from "places.js";
+
+import PlacesInput from "~/components/PlacesInput";
 
 export default {
-    components: {},
+    components: {
+        PlacesInput,
+    },
     mounted() {
         this.$nextTick(() => {
-            this.init();
+            this.map = this.$refs.map.mapObject;
         });
     },
     data() {
         return {
             map: null,
             markers: [],
-            placesAutocomplete: null
+            // https://community.algolia.com/places/documentation.html#options
+            places: {
+                options: {
+                    appId: "plQP5A45PM0V",
+                    apiKey: "cd3cf9fdf488492b1127761c90b683f1",
+                    type: "city",
+                    countries: ["US"],
+                },
+                value: null,
+                selected: {},
+            },
         };
     },
     methods: {
-        init() {
-            this.map = this.$refs.map.mapObject;
-
-            this.placesAutocomplete = places({
-                appId: "plQP5A45PM0V",
-                apiKey: "cd3cf9fdf488492b1127761c90b683f1",
-                container: this.$el.querySelector("#places-input"),
-                templates: {
-                    value: suggestion => {
-                        // console.log(JSON.stringify(suggestion));
-                        // return `${suggestion.name}, ${suggestion.administrative}`;
-                        return suggestion.query;
-                    }
-                }
-            }).configure({
-                type: "city",
-                aroundLatLngViaIP: false
-            });
-
-            this.placesAutocomplete.on("suggestions", this.handleOnSuggestions);
-            this.placesAutocomplete.on(
-                "cursorchanged",
-                this.handleOnCursorchanged
-            );
-            this.placesAutocomplete.on("change", this.handleOnChange);
-            this.placesAutocomplete.on("clear", this.handleOnClear);
-        },
-        handleOnSuggestions(e) {
-            this.markers.forEach(this.removeMarker);
-            this.markers = [];
-
-            if (e.suggestions.length === 0) {
-                this.map.setView(new L.LatLng(0, 0), 1);
-                return;
-            }
-
-            e.suggestions.forEach(this.addMarker);
-            this.findBestZoom();
-        },
-
-        handleOnChange(e) {
-            console.log("selected: ");
-            console.dir(e.suggestion);
+        handleLocationChange({ suggestions, suggestionIndex }) {
+            this.places.selected = suggestions;
             this.markers.forEach((marker, markerIndex) => {
-                if (markerIndex === e.suggestionIndex) {
+                if (markerIndex === suggestionIndex) {
                     this.markers = [marker];
                     marker.setOpacity(1);
                     this.findBestZoom();
@@ -94,15 +72,40 @@ export default {
                 }
             });
         },
+        // me
+        handleOnSuggestions({ suggestions }) {
+            this.markers.forEach(this.removeMarker);
+            this.markers = [];
+
+            if (suggestions.length === 0) {
+                this.map.setView(new L.LatLng(0, 0), 1);
+                return;
+            }
+
+            suggestions.forEach(this.addMarker);
+            this.findBestZoom();
+        },
+
+        // handleOnChange(e) {
+        //     this.markers.forEach((marker, markerIndex) => {
+        //         if (markerIndex === e.suggestionIndex) {
+        //             this.markers = [marker];
+        //             marker.setOpacity(1);
+        //             this.findBestZoom();
+        //         } else {
+        //             this.removeMarker(marker);
+        //         }
+        //     });
+        // },
 
         handleOnClear() {
             this.map.setView(new L.LatLng(0, 0), 1);
             this.markers.forEach(this.removeMarker);
         },
 
-        handleOnCursorchanged(e) {
+        handleOnCursorchanged({ suggestionIndex }) {
             this.markers.forEach((marker, markerIndex) => {
-                if (markerIndex === e.suggestionIndex) {
+                if (markerIndex === suggestionIndex) {
                     marker.setOpacity(1);
                     marker.setZIndexOffset(1000);
                 } else {
@@ -125,49 +128,16 @@ export default {
         findBestZoom() {
             var featureGroup = L.featureGroup(this.markers);
             this.map.fitBounds(featureGroup.getBounds().pad(0.5), {
-                animate: false
+                animate: false,
             });
-        }
-    }
+        },
+    },
 };
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
+/* Sample `apply` at-rules with Tailwind CSS */
 .container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 1000px;
-}
-
-.title {
-    font-family: "Quicksand", "Source Sans Pro", -apple-system,
-        BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-        sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
-}
-
-.subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-}
-
-.links {
-    padding-top: 15px;
+    /*@apply min-h-screen flex justify-center items-center text-center mx-auto;*/
 }
 </style>
