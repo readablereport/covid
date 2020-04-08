@@ -10,7 +10,7 @@
                 >
                     <l-tile-layer
                         url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
-                        attribution="Map tiles by <a href='Stamen Design'></a> <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
+                        attribution="Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
                         subdomains="abcd"
                         minZoom="0"
                         maxZoom="20"
@@ -129,7 +129,7 @@ export default {
             var featureGroup = L.featureGroup(this.markers);
             this.map.fitBounds(featureGroup.getBounds().pad(0.5), {
                 animate: false,
-                maxZoom: 11,
+                maxZoom: 13,
             });
         },
     },
