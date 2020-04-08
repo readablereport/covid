@@ -28,6 +28,12 @@
                     @onCursorchanged="handleOnCursorchanged"
                 />
             </div>
+
+            <client-only>
+                <div style="padding: 35px;">
+                    <c-line :data="chart.data"></c-line>
+                </div>
+            </client-only>
         </div>
     </div>
 </template>
@@ -59,6 +65,43 @@ export default {
                 },
                 value: null,
                 selected: {},
+            },
+            chart: {
+                data: {
+                    labels: [
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                    ],
+                    datasets: [
+                        {
+                            label: "My First dataset",
+                            backgroundColor: "#FF0000",
+                            borderColor: "#FF0000",
+                            data: [2, 17, 25, 4, 57, 52, 19],
+                            fill: false,
+                        },
+                        // {
+                        //     label: "My Second dataset",
+                        //     fill: false,
+                        //     backgroundColor: "blue",
+                        //     borderColor: "blue",
+                        //     data: [
+                        //         randomScalingFactor(),
+                        //         randomScalingFactor(),
+                        //         randomScalingFactor(),
+                        //         randomScalingFactor(),
+                        //         randomScalingFactor(),
+                        //         randomScalingFactor(),
+                        //         randomScalingFactor(),
+                        //     ],
+                        // },
+                    ],
+                },
             },
         };
     },

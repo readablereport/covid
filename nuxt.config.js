@@ -34,7 +34,10 @@ export default {
     /*
      ** Plugins to load before mounting the App
      */
-    plugins: [{ src: "~plugins/leaflet.js", mode: "client" }],
+    plugins: [
+        { src: "~plugins/charts.js", mode: "client" },
+        { src: "~plugins/leaflet.js", mode: "client" },
+    ],
     /*
      ** Nuxt.js dev-modules
      */
