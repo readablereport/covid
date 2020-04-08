@@ -71,7 +71,6 @@ export default {
         },
 
         onChange(e) {
-            console.dir(e);
             this.$emit("onChange", e);
             let { name, administrative } = e.suggestion;
 

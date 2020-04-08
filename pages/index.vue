@@ -52,8 +52,8 @@ export default {
             // https://community.algolia.com/places/documentation.html#options
             places: {
                 options: {
-                    appId: "plQP5A45PM0V",
-                    apiKey: "cd3cf9fdf488492b1127761c90b683f1",
+                    appId: process.env.PLACES_APP_ID,
+                    apiKey: process.env.PLACES_API_KEY,
                     type: "city",
                     countries: ["US"],
                 },
@@ -64,9 +64,6 @@ export default {
     },
     methods: {
         handleLocationChange({ suggestion, suggestionIndex }) {
-            console.log(
-                `place: ${suggestion.name}, ${suggestion.administrative}`
-            );
             this.places.selected = suggestion;
             this.places.value = `${suggestion.name}, ${suggestion.administrative}`;
 
@@ -80,7 +77,7 @@ export default {
                 }
             });
         },
-        // me
+        // map stuff
         handleOnSuggestions({ suggestions }) {
             this.markers.forEach(this.removeMarker);
             this.markers = [];
