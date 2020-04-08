@@ -71,8 +71,11 @@ export default {
         },
 
         onChange(e) {
+            console.dir(e);
             this.$emit("onChange", e);
-            this.updateValue(e.suggestion.value);
+            let { name, administrative } = e.suggestion;
+
+            this.updateValue(`${name}, ${administrative}`);
         },
 
         onClear(e) {

@@ -3,7 +3,7 @@
         <div>
             <div id="map-wrap" style="width: 100vw; height: 80vh;">
                 <l-map
-                    :zoom="13"
+                    :zoom="zoom"
                     :center="[40.6936, -89.589]"
                     :options="{ scrollWheelZoom: false }"
                     ref="map"
@@ -16,7 +16,7 @@
             </div>
             <div style="width: 900px; padding-left: 200px;">
                 <places-input
-                    :model="places.value"
+                    v-model="places.value"
                     :options="places.options"
                     @onChange="handleLocationChange"
                     @onSuggestions="handleOnSuggestions"
@@ -43,6 +43,7 @@ export default {
     data() {
         return {
             map: null,
+            zoom: 13,
             markers: [],
             // https://community.algolia.com/places/documentation.html#options
             places: {
@@ -58,8 +59,13 @@ export default {
         };
     },
     methods: {
-        handleLocationChange({ suggestions, suggestionIndex }) {
-            this.places.selected = suggestions;
+        handleLocationChange({ suggestion, suggestionIndex }) {
+            console.log(
+                `place: ${suggestion.name}, ${suggestion.administrative}`
+            );
+            this.places.selected = suggestion;
+            this.places.value = `${suggestion.name}, ${suggestion.administrative}`;
+
             this.markers.forEach((marker, markerIndex) => {
                 if (markerIndex === suggestionIndex) {
                     this.markers = [marker];
@@ -76,7 +82,7 @@ export default {
             this.markers = [];
 
             if (suggestions.length === 0) {
-                this.map.setView(new L.LatLng(0, 0), 1);
+                this.selectDefaultLocation();
                 return;
             }
 
@@ -84,20 +90,8 @@ export default {
             this.findBestZoom();
         },
 
-        // handleOnChange(e) {
-        //     this.markers.forEach((marker, markerIndex) => {
-        //         if (markerIndex === e.suggestionIndex) {
-        //             this.markers = [marker];
-        //             marker.setOpacity(1);
-        //             this.findBestZoom();
-        //         } else {
-        //             this.removeMarker(marker);
-        //         }
-        //     });
-        // },
-
         handleOnClear() {
-            this.map.setView(new L.LatLng(0, 0), 1);
+            this.selectDefaultLocation();
             this.markers.forEach(this.removeMarker);
         },
 
@@ -111,6 +105,10 @@ export default {
                     marker.setOpacity(0.5);
                 }
             });
+        },
+
+        selectDefaultLocation() {
+            this.map.setView(new L.LatLng(40.6936, -89.589), 13);
         },
 
         addMarker(suggestion) {
@@ -127,6 +125,7 @@ export default {
             var featureGroup = L.featureGroup(this.markers);
             this.map.fitBounds(featureGroup.getBounds().pad(0.5), {
                 animate: false,
+                maxZoom: 11,
             });
         },
     },
