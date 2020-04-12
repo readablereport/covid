@@ -34,16 +34,24 @@
                     <c-line :data="chart.data"></c-line>
                 </div>
             </client-only>
+
+            <hr />
+            <h1>NEWS</h1>
+            <client-only>
+                <rss-feed feedURL="somthing" />
+            </client-only>
         </div>
     </div>
 </template>
 
 <script>
 import PlacesInput from "~/components/PlacesInput";
+import RSSFeed from "~/components/RSSFeed";
 
 export default {
     components: {
-        PlacesInput,
+        "places-input": PlacesInput,
+        "rss-feed": RSSFeed,
     },
     mounted() {
         this.$nextTick(() => {
