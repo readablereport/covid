@@ -1,7 +1,30 @@
 <template>
-    <div class="container">
+    <div>
+        <HeaderNav />
+        <div class="max-w-screen-xl mx-auto pb-10">
+            <h1 class="text-6xl font-black text-martinique-500 mt-16">
+                Local COVID-19 info for:
+            </h1>
+            <form class="w-full max-w-xl">
+                <div class="flex items-center border-b-4 border-gray-400 py-2">
+                    <places-input
+                        v-model="places.value"
+                        :options="places.options"
+                        @onChange="handleLocationChange"
+                        @onSuggestions="handleOnSuggestions"
+                        @onClear="handleOnClear"
+                        @onCursorchanged="handleOnCursorchanged"
+                    />
+                </div>
+            </form>
+            <client-only>
+                <div class="w-full mt-16">
+                    <c-line :data="chart.data"></c-line>
+                </div>
+            </client-only>
+        </div>
         <div>
-            <div id="map-wrap" style="width: 100vw; height: 80vh;">
+            <div id="map-wrap" class="w-screen" style="height: 80vh;">
                 <l-map
                     :zoom="zoom"
                     :center="[40.6936, -89.589]"
@@ -18,40 +41,26 @@
                     ></l-tile-layer>
                 </l-map>
             </div>
-            <div style="width: 900px; padding-left: 200px;">
-                <places-input
-                    v-model="places.value"
-                    :options="places.options"
-                    @onChange="handleLocationChange"
-                    @onSuggestions="handleOnSuggestions"
-                    @onClear="handleOnClear"
-                    @onCursorchanged="handleOnCursorchanged"
-                />
-            </div>
-
-            <client-only>
-                <div style="padding: 35px;">
-                    <c-line :data="chart.data"></c-line>
-                </div>
-            </client-only>
-
-            <hr />
-            <h1>NEWS</h1>
-            <client-only>
-                <rss-feed feedURL="somthing" />
-            </client-only>
+            <!-- <div style="width: 900px; padding-left: 200px;">
+                <places-input v-model="places.value" :options="places.options" @onChange="handleLocationChange" @onSuggestions="handleOnSuggestions" @onClear="handleOnClear" @onCursorchanged="handleOnCursorchanged" />
+            </div> -->
         </div>
+        <FooterNav />
     </div>
 </template>
-
 <script>
+import "leaflet/dist/leaflet.css";
+import HeaderNav from "~/components/HeaderNav";
+import FooterNav from "~/components/FooterNav";
 import PlacesInput from "~/components/PlacesInput";
 import RSSFeed from "~/components/RSSFeed";
 
 export default {
     components: {
-        "places-input": PlacesInput,
+        PlacesInput,
         "rss-feed": RSSFeed,
+        HeaderNav,
+        FooterNav,
     },
     mounted() {
         this.$nextTick(() => {
@@ -118,6 +127,75 @@ export default {
             this.places.selected = suggestion;
             this.places.value = `${suggestion.name}, ${suggestion.administrative}`;
 
+            // components: {
+            //  HeaderNav,
+            //  FooterNav,
+            //  PlacesInput
+            // },
+            // mounted() {
+            //  this.$nextTick(() => {
+            //      this.map = this.$refs.map.mapObject;
+            //  });
+            // },
+            // data() {
+            //  return {
+            //      map: null,
+            //      zoom: 13,
+            //      markers: [],
+            //      // https://community.algolia.com/places/documentation.html#options
+            //      places: {
+            //          options: {
+            //              appId: process.env.PLACES_APP_ID,
+            //              apiKey: process.env.PLACES_API_KEY,
+            //              type: "city",
+            //              countries: ["US"],
+            //          },
+            //          value: null,
+            //          selected: {},
+            //      },
+            //      chart: {
+            //          data: {
+            //              labels: [
+            //                  "January",
+            //                  "February",
+            //                  "March",
+            //                  "April",
+            //                  "May",
+            //                  "June",
+            //                  "July",
+            //              ],
+            //              datasets: [{
+            //                      label: "My First dataset",
+            //                      backgroundColor: "#FF0000",
+            //                      borderColor: "#FF0000",
+            //                      data: [2, 17, 25, 4, 57, 52, 19],
+            //                      fill: false,
+            //                  },
+            //                  // {
+            //                  //     label: "My Second dataset",
+            //                  //     fill: false,
+            //                  //     backgroundColor: "blue",
+            //                  //     borderColor: "blue",
+            //                  //     data: [
+            //                  //         randomScalingFactor(),
+            //                  //         randomScalingFactor(),
+            //                  //         randomScalingFactor(),
+            //                  //         randomScalingFactor(),
+            //                  //         randomScalingFactor(),
+            //                  //         randomScalingFactor(),
+            //                  //         randomScalingFactor(),
+            //                  //     ],
+            //                  // },
+            //              ],
+            //          },
+            //      },
+            //  };
+            // },
+            // methods: {
+            //  handleLocationChange({ suggestion, suggestionIndex }) {
+            //      this.places.selected = suggestion;
+            //      this.places.value = `${suggestion.name}, ${suggestion.administrative}`;
+
             this.markers.forEach((marker, markerIndex) => {
                 if (markerIndex === suggestionIndex) {
                     this.markers = [marker];
@@ -183,10 +261,4 @@ export default {
     },
 };
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS */
-.container {
-    /*@apply min-h-screen flex justify-center items-center text-center mx-auto;*/
-}
-</style>
+<style></style>
