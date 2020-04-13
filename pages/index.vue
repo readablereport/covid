@@ -127,74 +127,6 @@ export default {
             this.places.selected = suggestion;
             this.places.value = `${suggestion.name}, ${suggestion.administrative}`;
 
-            // components: {
-            //  HeaderNav,
-            //  FooterNav,
-            //  PlacesInput
-            // },
-            // mounted() {
-            //  this.$nextTick(() => {
-            //      this.map = this.$refs.map.mapObject;
-            //  });
-            // },
-            // data() {
-            //  return {
-            //      map: null,
-            //      zoom: 13,
-            //      markers: [],
-            //      // https://community.algolia.com/places/documentation.html#options
-            //      places: {
-            //          options: {
-            //              appId: process.env.PLACES_APP_ID,
-            //              apiKey: process.env.PLACES_API_KEY,
-            //              type: "city",
-            //              countries: ["US"],
-            //          },
-            //          value: null,
-            //          selected: {},
-            //      },
-            //      chart: {
-            //          data: {
-            //              labels: [
-            //                  "January",
-            //                  "February",
-            //                  "March",
-            //                  "April",
-            //                  "May",
-            //                  "June",
-            //                  "July",
-            //              ],
-            //              datasets: [{
-            //                      label: "My First dataset",
-            //                      backgroundColor: "#FF0000",
-            //                      borderColor: "#FF0000",
-            //                      data: [2, 17, 25, 4, 57, 52, 19],
-            //                      fill: false,
-            //                  },
-            //                  // {
-            //                  //     label: "My Second dataset",
-            //                  //     fill: false,
-            //                  //     backgroundColor: "blue",
-            //                  //     borderColor: "blue",
-            //                  //     data: [
-            //                  //         randomScalingFactor(),
-            //                  //         randomScalingFactor(),
-            //                  //         randomScalingFactor(),
-            //                  //         randomScalingFactor(),
-            //                  //         randomScalingFactor(),
-            //                  //         randomScalingFactor(),
-            //                  //         randomScalingFactor(),
-            //                  //     ],
-            //                  // },
-            //              ],
-            //          },
-            //      },
-            //  };
-            // },
-            // methods: {
-            //  handleLocationChange({ suggestion, suggestionIndex }) {
-            //      this.places.selected = suggestion;
-            //      this.places.value = `${suggestion.name}, ${suggestion.administrative}`;
 
             this.markers.forEach((marker, markerIndex) => {
                 if (markerIndex === suggestionIndex) {
@@ -207,6 +139,90 @@ export default {
             });
         },
         // map stuff
+        handleOnSuggestions({ suggestions }) {
+            this.markers.forEach(this.removeMarker);
+//             this.markers = [];
+// =======
+//  components: {
+//      HeaderNav,
+//      FooterNav,
+//      PlacesInput
+//  },
+//  mounted() {
+//      this.$nextTick(() => {
+//          this.map = this.$refs.map.mapObject;
+//      });
+//  },
+//  data() {
+//      return {
+//          map: null,
+//          zoom: 13,
+//          markers: [],
+//          // https://community.algolia.com/places/documentation.html#options
+//          places: {
+//              options: {
+//                  appId: process.env.PLACES_APP_ID,
+//                  apiKey: process.env.PLACES_API_KEY,
+//                  type: "city",
+//                  countries: ["US"],
+//              },
+//              value: null,
+//              selected: {},
+//          },
+//          chart: {
+//              data: {
+//                  labels: [
+//                      "January",
+//                      "February",
+//                      "March",
+//                      "April",
+//                      "May",
+//                      "June",
+//                      "July",
+//                  ],
+//                  datasets: [{
+//                          label: "My First dataset",
+//                          backgroundColor: "#FF0000",
+//                          borderColor: "#FF0000",
+//                          data: [2, 17, 25, 4, 57, 52, 19],
+//                          fill: false,
+//                      },
+//                      // {
+//                      //     label: "My Second dataset",
+//                      //     fill: false,
+//                      //     backgroundColor: "blue",
+//                      //     borderColor: "blue",
+//                      //     data: [
+//                      //         randomScalingFactor(),
+//                      //         randomScalingFactor(),
+//                      //         randomScalingFactor(),
+//                      //         randomScalingFactor(),
+//                      //         randomScalingFactor(),
+//                      //         randomScalingFactor(),
+//                      //         randomScalingFactor(),
+//                      //     ],
+//                      // },
+//                  ],
+//              },
+//          },
+//      };
+//  },
+//  methods: {
+//      handleLocationChange({ suggestion, suggestionIndex }) {
+//          this.places.selected = suggestion;
+//          this.places.value = `${suggestion.name}, ${suggestion.administrative}`;
+
+//          this.markers.forEach((marker, markerIndex) => {
+//              if (markerIndex === suggestionIndex) {
+//                  this.markers = [marker];
+//                  marker.setOpacity(1);
+//                  this.findBestZoom();
+//              } else {
+//                  this.removeMarker(marker);
+//              }
+//          });
+//      },
+//      // map stuff
         handleOnSuggestions({ suggestions }) {
             this.markers.forEach(this.removeMarker);
             this.markers = [];
