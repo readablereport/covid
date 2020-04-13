@@ -15,6 +15,7 @@
         "leaflet": "1.6.0",
         "nuxt": "^2.0.0",
         "places.js": "1.18.1",
+        "typeface-open-sans": "0.0.75",
         "vue-chartjs": "3.5.0",
         "vue2-leaflet": "2.5.2"
     },
