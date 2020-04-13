@@ -1,6 +1,6 @@
 import Vue from "vue";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
-import "leaflet/dist/leaflet.css";
+// import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
 
 // Hack to get the icons to work on Prod. See vue2-leaflet docs for more info

@@ -4,6 +4,11 @@
 /* purgecss end ignore */
 /*@import "tailwindcss/utilities";*/
 
+/*@import "http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css";*/
+/* purgecss start ignore */
+@import "leaflet/dist/leaflet.css";
+/* purgecss end ignore */
+
 @tailwind base;
 @tailwind components;
 
@@ -20,3 +25,4 @@ main {
 }
 
 @tailwind utilities;
+
