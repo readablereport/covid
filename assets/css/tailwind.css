@@ -8,15 +8,15 @@
 @tailwind components;
 
 body {
-	@apply antialiased bg-martinique-500;
+    @apply antialiased bg-martinique-500;
 }
 
 main {
-	@apply bg-white;
-	background-image: url('~assets/img/main-bg-alpha.svg');
-	background-repeat: repeat;
-	background-size: 198px 110px;
-	background-attachment: fixed;
+    @apply bg-white;
+    background-image: url("~assets/img/main-bg-alpha.svg");
+    background-repeat: repeat;
+    background-size: 198px 110px;
+    background-attachment: fixed;
 }
 
 @tailwind utilities;
