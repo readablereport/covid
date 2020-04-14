@@ -28,8 +28,11 @@ export default {
     },
     methods: {
         async fetchFeed() {
+            const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
             console.log("fetching feed");
-            let feed = await parser.parseURL("https://www.reddit.com/.rss");
+            let feed = await parser.parseURL(
+                CORS_PROXY + "https://www.reddit.com/.rss"
+            );
             console.log(feed.title);
             this.items = feed.items;
             feed.items.forEach((item) => {

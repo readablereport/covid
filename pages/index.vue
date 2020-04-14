@@ -42,9 +42,7 @@
                     ></l-tile-layer>
                 </l-map>
             </div>
-            <!-- <div style="width: 900px; padding-left: 200px;">
-                <places-input v-model="places.value" :options="places.options" @onChange="handleLocationChange" @onSuggestions="handleOnSuggestions" @onClear="handleOnClear" @onCursorchanged="handleOnCursorchanged" />
-            </div> -->
+            <rss-feed feedURL="" />
         </div>
         <FooterNav />
     </div>
