@@ -11,6 +11,7 @@
         "generate": "nuxt generate"
     },
     "dependencies": {
+        "@nuxtjs/axios": "5.9.7",
         "chart.js": "2.9.3",
         "leaflet": "1.6.0",
         "nuxt": "2.12.2",
