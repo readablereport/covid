@@ -2,6 +2,7 @@ export default {
     env: {
         PLACES_APP_ID: "plQP5A45PM0V",
         PLACES_API_KEY: "cd3cf9fdf488492b1127761c90b683f1",
+        // API_URL: process.env.API_URL,
     },
     mode: "spa",
     /*
@@ -44,11 +45,24 @@ export default {
     buildModules: [
         // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
         "@nuxtjs/tailwindcss",
+        "@nuxtjs/dotenv",
     ],
     /*
      ** Nuxt.js modules
      */
-    modules: [],
+    modules: ["@nuxtjs/axios", "@nuxtjs/proxy"],
+
+    axios: {
+        proxy: true,
+    },
+    proxy: {
+        "/api/": {
+            target:
+                "https://dm8eqjt1q0.execute-api.us-east-2.amazonaws.com/dev",
+            pathRewrite: { "^/api/": "" },
+        },
+    },
+
     /*
      ** Build configuration
      */
