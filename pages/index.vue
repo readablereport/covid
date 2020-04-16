@@ -10,11 +10,11 @@
 					<places-input v-model="places.value" :options="places.options" @onChange="handleLocationChange" @onSuggestions="handleOnSuggestions" @onClear="handleOnClear" @onCursorchanged="handleOnCursorchanged" />
 				</div>
 			</form>
-			<div class="w-full mt-16">
-				<!--  <no-ssr>
+			<!-- <div class="w-full mt-16">
+				 <no-ssr>
 					<c-line :data="chart.data"></c-line>
-				</no-ssr> -->
-			</div>
+				</no-ssr>
+			</div> -->
 		</div>
 		<div>
 			<div id="map-wrap" class="w-screen h-screen/2">
