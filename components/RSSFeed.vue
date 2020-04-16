@@ -52,7 +52,7 @@ export default {
         async fetchFeed() {
             try {
                 let response = await this.$axios.get(
-                    "https://dm8eqjt1q0.execute-api.us-east-2.amazonaws.com/dev/news?city=Peoria&state=IL"
+                    "/api/news?city=Peoria&state=IL"
                 );
                 this.items = response.data.data;
             } catch (e) {
