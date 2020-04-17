@@ -1,10 +1,14 @@
 require("dotenv").config();
 
+const API_URL =
+    process.env.API_URL ||
+    "https://dm8eqjt1q0.execute-api.us-east-2.amazonaws.com/dev";
+
 export default {
     env: {
         PLACES_APP_ID: process.env.PLACES_APP_ID,
         PLACES_API_KEY: process.env.PLACES_API_KEY,
-        API_URL: process.env.API_URL || "http://localhost:4000",
+        API_URL: API_URL,
     },
     mode: "spa",
     /*
@@ -164,11 +168,10 @@ export default {
 
     axios: {
         proxy: true,
-        baseURL: process.env.API_URL,
     },
     proxy: {
         "/api/": {
-            target: process.env.API_URL,
+            target: API_URL,
             pathRewrite: { "^/api/": "" },
         },
     },
