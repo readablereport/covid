@@ -1,5 +1,11 @@
 <template>
-    <input class="appearance-none bg-transparent border-none w-full text-5xl mr-3 py-1 px-2 focus:outline-none" type="search" placeholder="enter your location" :value="value" @input="updateValue($event.target.value)" />
+    <input
+        class="appearance-none bg-transparent border-none w-full text-5xl mr-3 py-1 px-2 focus:outline-none"
+        type="search"
+        placeholder="enter your location"
+        :value="value"
+        @input="updateValue($event.target.value)"
+    />
 </template>
 <script>
 import L from "leaflet";
@@ -40,7 +46,9 @@ export default {
                 aroundLatLngViaIP: false,
                 container: this.options.container,
                 templates: {
-                    value: (suggestion) => suggestion.query,
+                    value: (suggestion) => {
+                        return `${suggestion.name}, ${suggestion.administrative}`;
+                    },
                 },
             });
 
@@ -89,7 +97,6 @@ export default {
         }
     },
 };
-
 </script>
 <style>
 .ap-suggestion-icon svg {
@@ -99,5 +106,4 @@ export default {
 .ap-footer svg {
     display: inline;
 }
-
 </style>

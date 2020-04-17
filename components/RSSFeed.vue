@@ -6,17 +6,24 @@
 			</h1>
 			<div class="flex flex-wrap">
 				<div v-for="item in items" class="item w-1/2 px-6 py-6">
-					<h2 class="text-xl font-bold leading-tight truncate text-gray-800">
+					<h2
+						class="text-xl font-bold leading-tight truncate text-gray-800"
+					>
 						{{ item.title }}
 					</h2>
 					<div class="flex items-center">
-						<a class="text-xs uppercase font-bold text-indigo-500 no-underline hover:text-indigo-700 transition duration-300 ease-in-out" :href="item.link" target="_blank">{{ item.source }}r</a>
+						<a
+							class="text-xs uppercase font-bold text-indigo-500 no-underline hover:text-indigo-700 transition duration-300 ease-in-out"
+							:href="item.link"
+							target="_blank"
+							>{{ item.source }}</a
+						>
 						<span class="px-1 text-gray-400">&bull;</span>
 						<p class="text-xs font-bold text-gray-600">
 							{{ item.pubDate }}
 						</p>
 					</div>
-					<p class="text-sm text-gray-700 h-14 mt-1 overflow-hiddenxxx">
+					<p class="text-sm text-gray-700 h-14 mt-1">
 						{{ item.content }}
 					</p>
 				</div>
@@ -29,9 +36,13 @@ let Parser = require("rss-parser");
 let parser = new Parser();
 export default {
 	props: {
-		feedURL: {
+		city: {
 			type: String,
-			required: true,
+			// required: true,
+		},
+		state: {
+			type: String,
+			// required: true,
 		},
 	},
 	mounted() {
@@ -45,15 +56,16 @@ export default {
 	methods: {
 		async fetchFeed() {
 			try {
-				let response = await this.$axios.get(
-					"/api/news?city=Peoria&state=IL"
-				);
-				this.items = response.data.data;
+				if (this.city && this.state) {
+					let response = await this.$axios.get(
+						`/api/news?city=${this.city}&state=${this.state}`
+					);
+					this.items = response.data.data;
+				}
 			} catch (e) {
 				console.log("Failed to load the news feed");
 			}
 		},
 	},
 };
-
 </script>
