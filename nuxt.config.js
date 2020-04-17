@@ -1,7 +1,10 @@
+require("dotenv").config();
+
 export default {
     env: {
-        PLACES_APP_ID: "plQP5A45PM0V",
-        PLACES_API_KEY: "cd3cf9fdf488492b1127761c90b683f1",
+        PLACES_APP_ID: process.env.PLACES_APP_ID,
+        PLACES_API_KEY: process.env.PLACES_API_KEY,
+        API_URL: process.env.API_URL || "http://localhost:4000",
     },
     mode: "spa",
     /*
@@ -164,8 +167,7 @@ export default {
     },
     proxy: {
         "/api/": {
-            target:
-                "https://dm8eqjt1q0.execute-api.us-east-2.amazonaws.com/dev",
+            target: process.env.API_URL,
             pathRewrite: { "^/api/": "" },
         },
     },
