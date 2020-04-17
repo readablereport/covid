@@ -16,7 +16,7 @@
 							{{ item.pubDate }}
 						</p>
 					</div>
-					<p class="text-sm text-gray-700 h-12 mt-1 overflow-hidden">
+					<p class="text-sm text-gray-700 h-14 mt-1 overflow-hiddenxxx">
 						{{ item.content }}
 					</p>
 				</div>
