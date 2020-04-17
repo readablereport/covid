@@ -23,7 +23,7 @@
             <p>Deaths: {{ this.stats.county.deaths }}</p>
         </div>
 
-        <div class="max-w-screen-xl mx-auto">
+        <div class="max-w-screen-xl mx-auto mb-16">
             <h1 class="text-6xl font-black text-martinique-500 mt-16">
                 Local COVID-19 info for:
             </h1>
@@ -42,7 +42,7 @@
                 </div>
             </form>
         </div>
-        <div id="map-wrap" class="w-screen h-screen/2 z-0">
+        <div id="map-wrap" class="w-screen h-screen/2 mt-16">
             <l-map
                 @resize="onResizeMap"
                 :zoom="zoom"
@@ -124,6 +124,10 @@ export default {
     methods: {
         async fetchStats() {
             try {
+                console.log(
+                    "fetching stats at: " +
+                        `/api/stats?county=${this.county}&state=${this.state}`
+                );
                 let { data } = await this.$axios.get(
                     `/api/stats?county=${this.county}&state=${this.state}`
                 );
@@ -140,7 +144,6 @@ export default {
         },
         handleLocationChange({ suggestion, suggestionIndex }) {
             this.places.selected = suggestion;
-            this.places.value = `${suggestion.name}, ${suggestion.administrative}`;
 
             this.markers.forEach((marker, markerIndex) => {
                 if (markerIndex === suggestionIndex) {
