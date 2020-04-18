@@ -1,10 +1,17 @@
 <template>
-	<div class="max-w-screen-lg mx-auto pb-16">
+	<div class="max-w-screen-lg h-full mx-auto pb-16 relative z-10 h-64">
 		<div class="items">
 			<h1 class="text-5xl font-black text-martinique-500 mt-16 mb-4 pl-6">
 				News
 			</h1>
 			<div class="flex flex-wrap">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse odio distinctio quas. Iste magni ratione obcaecati voluptates explicabo molestiae hic dolores. Veniam, magnam, ducimus. Sunt laborum illo tempore libero molestias.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse odio distinctio quas. Iste magni ratione obcaecati voluptates explicabo molestiae hic dolores. Veniam, magnam, ducimus. Sunt laborum illo tempore libero molestias.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse odio distinctio quas. Iste magni ratione obcaecati voluptates explicabo molestiae hic dolores. Veniam, magnam, ducimus. Sunt laborum illo tempore libero molestias.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse odio distinctio quas. Iste magni ratione obcaecati voluptates explicabo molestiae hic dolores. Veniam, magnam, ducimus. Sunt laborum illo tempore libero molestias.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse odio distinctio quas. Iste magni ratione obcaecati voluptates explicabo molestiae hic dolores. Veniam, magnam, ducimus. Sunt laborum illo tempore libero molestias.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse odio distinctio quas. Iste magni ratione obcaecati voluptates explicabo molestiae hic dolores. Veniam, magnam, ducimus. Sunt laborum illo tempore libero molestias.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse odio distinctio quas. Iste magni ratione obcaecati voluptates explicabo molestiae hic dolores. Veniam, magnam, ducimus. Sunt laborum illo tempore libero molestias.</p>
 				<div v-for="item in items" class="item w-1/2 px-6 py-6">
 					<h2
 						class="text-xl font-bold leading-tight truncate text-gray-800"

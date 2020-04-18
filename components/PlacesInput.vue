@@ -1,8 +1,8 @@
 <template>
     <input
-        class="appearance-none bg-transparent border-none w-full text-5xl mr-3 py-1 px-2 focus:outline-none"
+        class="appearance-none bg-transparent border-none w-full h-16 text-5xl font-light text-gray-600 mr-3 py-1 px-4 focus:outline-none"
         type="search"
-        placeholder="enter your location"
+        placeholder="your location"
         :value="value"
         @input="updateValue($event.target.value)"
     />

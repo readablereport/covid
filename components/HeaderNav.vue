@@ -1,7 +1,8 @@
 <template>
-	<nav class="px-4 py-12 bg-martinique-500">
-		<div class="max-w-screen-xl mx-auto flex items-center justify-end">
-			<div class="font-bold uppercase text-sm">
+	<nav class="w-100 bg-martinique-500">
+		<div class="max-w-screen-xl mx-auto h-32 flex items-center justify-between overflow-hidden">
+			<img src="~/assets/img/logo.svg" class="self-center" alt="">
+			<div class="font-bold uppercase text-sm pr-16">
 				<nuxt-link to="/" class="mr-6">local info</nuxt-link>
 				<nuxt-link to="/volunteer-info" class="mr-6">volunteer info</nuxt-link>
 				<nuxt-link to="/info-for-makers" class="mr-6">info for makers</nuxt-link>
