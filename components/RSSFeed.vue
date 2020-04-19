@@ -1,11 +1,11 @@
 <template>
-    <div class="max-w-screen-lg h-full mx-auto pb-16 relative z-10 h-64">
+    <!-- <div class="max-w-screen-lg h-full mx-auto pb-16 relative z-10 h-64"> -->
         <div class="items">
-            <h1 class="text-5xl font-black text-martinique-500 mt-16 mb-4 pl-6">
+				<h1 class="text-6xl font-extrabold text-martinique-500 mt-16">
                 News
             </h1>
             <div class="flex flex-wrap">
-                <div v-for="item in items" class="item w-1/2 px-6 py-6">
+                <div v-for="item in items" class="item w-1/2 pr-10 py-4">
                     <h2
                         class="text-xl font-bold leading-tight truncate text-gray-800"
                     >
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </template>
 <script>
 let Parser = require("rss-parser");
