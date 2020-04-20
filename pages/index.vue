@@ -6,7 +6,7 @@
 				<h1 class="text-6xl font-extrabold text-martinique-500 mt-12">
 					Local COVID-19 info for:
 				</h1>
-				<form class="w-full pr-10">
+				<form class="w-full pr-10" @submit.prevent>
 					<div class="flex items-center border-b-4 border-gray-400 py-2 z-10">
 						<places-input v-model="places.value" :options="places.options" @onChange="handleLocationChange" @onSuggestions="handleOnSuggestions" @onClear="handleOnClear" @onCursorchanged="handleOnCursorchanged" />
 					</div>
@@ -51,7 +51,7 @@ export default {
 	},
 	async asyncData({ query, $axios }) {
 		if (query.city && query.county && query.state) {
-			let { data } = await $axios.get(`/api/stats?county=${query.county}&state=${query.state}`);
+			let { data } = await $axios.get(`/stats?county=${query.county}&state=${query.state}`);
 			let { county, state, country } = data.data;
 
 			return {
@@ -64,6 +64,7 @@ export default {
 					},
 				},
 				stats: {
+					isLoading: false,
 					county,
 					state,
 					country,
@@ -81,13 +82,12 @@ export default {
 				options: {
 					appId: process.env.PLACES_APP_ID,
 					apiKey: process.env.PLACES_API_KEY,
-					type: "city",
-					countries: ["US"],
 				},
 				value: null,
 				selected: {},
 			},
 			stats: {
+				isLoading: false,
 				county: {},
 				state: {},
 				country: {},
@@ -114,11 +114,13 @@ export default {
 	methods: {
 		async fetchStats() {
 			try {
-				let { data } = await this.$axios.get(`/api/stats?county=${this.county}&state=${this.state}`);
+				this.stats.isLoading = true;
+				let { data } = await this.$axios.get(`/stats?county=${this.county}&state=${this.state}`);
 				let { county, state, country } = data.data;
 				this.stats.county = county;
 				this.stats.state = state;
 				this.stats.country = country;
+				this.stats.isLoading = false;
 
 				this.$router.push({
 					query: {

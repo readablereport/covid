@@ -1,117 +1,133 @@
 <template>
 	<div class="flex items-start justify-between mr-10 mt-6">
-		<!-- County -->
-		<div class="crr--card">
-			<p class="text-xl text-melrose-200 font-extrabold uppercase leading-none truncate pb-6 border-b-2 border-melrose-600">
-				{{ this.data.county.label }} County
-			</p>
-			<div>
-				<div v-if="data.county.confirmed">
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
-						{{ this.data.county.confirmed }}
-					</p>
-					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Confirmed
-					</p>
-				</div>
-
-				<div v-if="data.county.recovered">
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
-						{{ this.data.county.recovered }}
-					</p>
-					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Recovered
-					</p>
-				</div>
-
-				<div v-if="data.county.deaths">
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
-						{{ this.data.county.deaths }}
-					</p>
-					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Deaths
-					</p>
-				</div>
-			</div>
-		</div>
-		<!-- State -->
-		<div class="crr--card">
-			<p class="text-xl text-melrose-200 font-extrabold uppercase leading-none pb-6 border-b-2 border-melrose-600">
-				{{ this.data.state.label }}
-			</p>
-			<div>
-				<div v-if="data.state.confirmed">
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
-						{{ this.data.state.confirmed }}
-					</p>
-					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Confirmed
-					</p>
-				</div>
-
-				<div v-if="data.state.recovered">
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
-						{{ this.data.state.recovered }}
-					</p>
-					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Recovered
-					</p>
-				</div>
-
-				<div v-if="data.state.deaths">
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
-						{{ this.data.state.deaths }}
-					</p>
-					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Deaths
-					</p>
+		<template v-if="isLoading">
+			<p>Loading Stats...</p>
+		</template>
+		<template v-else>
+			<!-- County -->
+			<div class="crr--card">
+				<p class="text-xl text-melrose-200 font-extrabold uppercase leading-none truncate pb-6 border-b-2 border-melrose-600">
+					{{ this.data.county.label }} County
+				</p>
+				<div>
+					<div v-if="data.county.confirmed">
+						<p class="text-3xl text-melrose-200 font-semibold mt-4">
+							{{ this.data.county.confirmed }}
+						</p>
+						<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
+							Confirmed
+						</p>
+					</div>
+					<div v-if="data.county.recovered">
+						<p class="text-3xl text-melrose-200 font-semibold mt-4">
+							{{ this.data.county.recovered }}
+						</p>
+						<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
+							Recovered
+						</p>
+					</div>
+					<div v-if="data.county.deaths">
+						<p class="text-3xl text-melrose-200 font-semibold mt-4">
+							{{ this.data.county.deaths }}
+						</p>
+						<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
+							Deaths
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Country -->
-		<div class="crr--card">
-			<p class="text-xl text-melrose-200 font-extrabold uppercase leading-none pb-6 border-b-2 border-melrose-600">
-				{{ this.data.country.label }}
-			</p>
-			<div>
-				<div v-if="data.country.confirmed">
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
-						{{ this.data.country.confirmed }}
-					</p>
-					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Confirmed
-					</p>
-				</div>
-
-				<div v-if="data.country.recovered">
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
-						{{ this.data.country.recovered }}
-					</p>
-					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Recovered
-					</p>
-				</div>
-
-				<div v-if="data.country.deaths">
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
-						{{ this.data.country.deaths }}
-					</p>
-					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Deaths
-					</p>
+			<!-- State -->
+			<div class="crr--card">
+				<p class="text-xl text-melrose-200 font-extrabold uppercase leading-none pb-6 border-b-2 border-melrose-600">
+					{{ this.data.state.label }}
+				</p>
+				<div>
+					<div v-if="data.state.confirmed">
+						<p class="text-3xl text-melrose-200 font-semibold mt-4">
+							{{ this.data.state.confirmed }}
+						</p>
+						<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
+							Confirmed
+						</p>
+					</div>
+					<div v-if="data.state.recovered">
+						<p class="text-3xl text-melrose-200 font-semibold mt-4">
+							{{ this.data.state.recovered }}
+						</p>
+						<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
+							Recovered
+						</p>
+					</div>
+					<div v-if="data.state.deaths">
+						<p class="text-3xl text-melrose-200 font-semibold mt-4">
+							{{ this.data.state.deaths }}
+						</p>
+						<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
+							Deaths
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
+			<!-- Country -->
+			<div class="crr--card">
+				<p class="text-xl text-melrose-200 font-extrabold uppercase leading-none pb-6 border-b-2 border-melrose-600">
+					{{ this.data.country.label }}
+				</p>
+				<div>
+					<div v-if="data.country.confirmed">
+						<p class="text-3xl text-melrose-200 font-semibold mt-4">
+							{{ this.data.country.confirmed }}
+						</p>
+						<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
+							Confirmed
+						</p>
+					</div>
+					<div v-if="data.country.recovered">
+						<p class="text-3xl text-melrose-200 font-semibold mt-4">
+							{{ this.data.country.recovered }}
+						</p>
+						<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
+							Recovered
+						</p>
+					</div>
+					<div v-if="data.country.deaths">
+						<p class="text-3xl text-melrose-200 font-semibold mt-4">
+							{{ this.data.country.deaths }}
+						</p>
+						<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
+							Deaths
+						</p>
+					</div>
+				</div>
+			</div>
+		</template>
 	</div>
 </template>
-
 <script>
 export default {
 	props: {
-		data: {
+		stats: {
 			type: Object,
 			required: true,
 		},
 	},
+	computed: {
+		isLoading() {
+			return this.stats.isLoading;
+		},
+	},
+	methods: {
+		clean(stat) {
+			if (stat === 0) {
+				return 0;
+			}
+			//null / undefined
+			if (!stat) {
+				return "N/A";
+			}
+			return stat;
+		},
+	},
 };
+
 </script>

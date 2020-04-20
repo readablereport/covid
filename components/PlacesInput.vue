@@ -43,6 +43,8 @@ export default {
 
             this.placesAutocomplete = places({
                 ...this.options,
+                type: "city",
+                countries: ["US"],
                 aroundLatLngViaIP: false,
                 container: this.options.container,
                 templates: {
@@ -68,18 +70,22 @@ export default {
 
     methods: {
         updateValue(value) {
+            console.log("places value changed");
             this.$emit("input", value);
         },
 
         onSuggestions(e) {
+            console.log("places onSuggestions");
             this.$emit("onSuggestions", e);
         },
 
         onCursorChanged(e) {
+            console.log("places onCursorChanged");
             this.$emit("onCursorChanged", e);
         },
 
         onChange(e) {
+            console.log("places onChange");
             this.$emit("onChange", e);
             let { name, administrative } = e.suggestion;
 
@@ -87,11 +93,13 @@ export default {
         },
 
         onClear(e) {
+            console.log("places onClear");
             this.$emit("onClear");
             this.updateValue(null);
         },
 
         onError(e) {
+            console.log("places onError");
             this.$emit("onError", e.message);
         },
     },
