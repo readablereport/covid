@@ -53,21 +53,6 @@ export default {
                         }
 
                         return `${suggestion.name}, ${suggestion.administrative}`;
-
-                        // let selected = this.places.selected;
-
-                        // if (selected.hasOwnProperty("administrative")) {
-                        //     return selected.administrative;
-                        // }
-
-                        // if (
-                        //     Array.isArray(selected.hit.suggestions) &&
-                        //     selected.hit.suggestions.length > 0
-                        // ) {
-                        //     return selected.hit.suggestions[0];
-                        // }
-
-                        // return "";
                     },
                 },
             });

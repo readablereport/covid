@@ -20,3 +20,9 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+# TODO
+
+-   Transition from using the proxy module to the axios baseURL
+-   When no suggestion is selected or the current search is deselected it should clear the stats
+-   Center the map and fix the pins
