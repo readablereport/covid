@@ -71,8 +71,28 @@ export default {
             this.map = this.$refs.map.mapObject;
         });
     },
-    // async asyncData({$axios}) {
-    // },
+    async asyncData({ query, $axios }) {
+        if (query.city && query.county && query.state) {
+            let { data } = await $axios.get(`/api/stats?county=${query.county}&state=${query.state}`);
+            let { county, state, country } = data.data;
+
+            return {
+                places: {
+                    value: `${query.city}, ${query.state}`,
+                    selected: {
+                        name: query.city,
+                        county: query.county,
+                        administrative: query.state,
+                    },
+                },
+                stats: {
+                    county,
+                    state,
+                    country,
+                },
+            };
+        }
+    },
     data() {
         return {
             map: null,
@@ -116,7 +136,6 @@ export default {
     methods: {
         async fetchStats() {
             try {
-                console.log("fetching stats at: " + `/api/stats?county=${this.county}&state=${this.state}`);
                 let { data } = await this.$axios.get(`/api/stats?county=${this.county}&state=${this.state}`);
                 let { county, state, country } = data.data;
                 this.stats.county = county;
@@ -125,6 +144,7 @@ export default {
 
                 this.$router.push({
                     query: {
+                        city: this.city,
                         county: this.county,
                         state: this.state,
                     },
@@ -138,6 +158,10 @@ export default {
             this.stats.county = {};
             this.stats.state = {};
             this.stats.country = {};
+            this.places.selected = {};
+            this.$router.push({
+                query: null,
+            });
         },
         onResizeMap() {
             this.map._onResize();
@@ -173,6 +197,7 @@ export default {
         handleOnClear() {
             this.selectDefaultLocation();
             this.markers.forEach(this.removeMarker);
+            this.clearStats();
         },
 
         handleOnCursorchanged({ suggestionIndex }) {
@@ -213,6 +238,6 @@ export default {
 </script>
 <style>
 .h-screen-math {
-	min-height: calc(100vh - 16rem);
+    min-height: calc(100vh - 16rem);
 }
 </style>
