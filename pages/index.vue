@@ -107,6 +107,7 @@ export default {
                 selected: {},
             },
             stats: {
+                isLoading: false,
                 county: {},
                 state: {},
                 country: {},
@@ -139,6 +140,7 @@ export default {
                 this.stats.county = county;
                 this.stats.state = state;
                 this.stats.country = country;
+                this.stats.isLoading = false;
 
                 this.$router.push({
                     query: {
@@ -147,8 +149,6 @@ export default {
                         state: this.state,
                     },
                 });
-
-                this.stats.isLoading = false;
             } catch (e) {
                 console.error(e);
                 console.log("Failed to fetch stats");
