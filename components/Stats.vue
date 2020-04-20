@@ -1,102 +1,102 @@
 <template>
     <div class="flex items-start justify-between mt-12 -mr-12 relative z-10">
         <!-- County -->
-        <div class="bg-gray-200 rounded-md w-1/3 p-8 shadow shadow-lg text-center">
-            <p class="text-xl text-melrose-600 font-extrabold capitalize leading-none pb-4 border-b-2 border-gray-300">
+        <div class="bg-white rounded-md w-1/3 p-8 shadow shadow-sm text-center">
+            <p class="text-xl text-melrose-700 font-extrabold capitalize leading-none pb-4 border-b-2 border-gray-300">
                 {{ this.data.county.label }} County
             </p>
             <div>
                 <div v-if="data.county.confirmed">
-                    <p class="text-2xl text-gray-600 font-semibold mt-4">
+                    <p class="text-3xl text-gray-600 font-semibold mt-4">
                         {{ this.data.county.confirmed }}
                     </p>
-                    <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
+                    <p class="text-baase text-gray-700 font-extrabold uppercase leading-none">
                         Confirmed
                     </p>
                 </div>
 
                 <div v-if="data.county.recovered">
-                    <p class="text-2xl text-gray-600 font-semibold mt-4">
+                    <p class="text-3xl text-gray-600 font-semibold mt-4">
                         {{ this.data.county.recovered }}
                     </p>
-                    <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
+                    <p class="text-baase text-gray-700 font-extrabold uppercase leading-none">
                         Recovered
                     </p>
                 </div>
 
                 <div v-if="data.county.deaths">
-                    <p class="text-2xl text-gray-600 font-semibold mt-4">
+                    <p class="text-3xl text-gray-600 font-semibold mt-4">
                         {{ this.data.county.deaths }}
                     </p>
-                    <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
+                    <p class="text-baase text-gray-700 font-extrabold uppercase leading-none">
                         Deaths
                     </p>
                 </div>
             </div>
         </div>
         <!-- State -->
-        <div class="bg-gray-200 rounded-md w-1/3 mx-8 p-8 shadow shadow-lg text-center">
-            <p class="text-xl text-melrose-600 font-extrabold capitalize leading-none pb-4 border-b-2 border-gray-300">
+        <div class="bg-white rounded-md w-1/3 mx-8 p-8 shadow shadow-sm text-center">
+            <p class="text-xl text-melrose-700 font-extrabold capitalize leading-none pb-4 border-b-2 border-gray-300">
                 {{ this.data.state.label }}
             </p>
             <div>
                 <div v-if="data.state.confirmed">
-                    <p class="text-2xl text-gray-600 font-semibold mt-4">
+                    <p class="text-3xl text-gray-600 font-semibold mt-4">
                         {{ this.data.state.confirmed }}
                     </p>
-                    <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
+                    <p class="text-baase text-gray-700 font-extrabold uppercase leading-none">
                         Confirmed
                     </p>
                 </div>
 
                 <div v-if="data.state.recovered">
-                    <p class="text-2xl text-gray-600 font-semibold mt-4">
+                    <p class="text-3xl text-gray-600 font-semibold mt-4">
                         {{ this.data.state.recovered }}
                     </p>
-                    <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
+                    <p class="text-baase text-gray-700 font-extrabold uppercase leading-none">
                         Recovered
                     </p>
                 </div>
 
                 <div v-if="data.state.deaths">
-                    <p class="text-2xl text-gray-600 font-semibold mt-4">
+                    <p class="text-3xl text-gray-600 font-semibold mt-4">
                         {{ this.data.state.deaths }}
                     </p>
-                    <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
+                    <p class="text-baase text-gray-700 font-extrabold uppercase leading-none">
                         Deaths
                     </p>
                 </div>
             </div>
         </div>
         <!-- Country -->
-        <div class="bg-gray-200 rounded-md w-1/3 p-8 shadow shadow-lg text-center">
-            <p class="text-xl text-melrose-600 font-extrabold capitalize leading-none pb-4 border-b-2 border-gray-300">
+        <div class="bg-white rounded-md w-1/3 p-8 shadow shadow-sm text-center">
+            <p class="text-xl text-melrose-700 font-extrabold capitalize leading-none pb-4 border-b-2 border-gray-300">
                 {{ this.data.country.label }}
             </p>
             <div>
                 <div v-if="data.country.confirmed">
-                    <p class="text-2xl text-gray-600 font-semibold mt-4">
+                    <p class="text-3xl text-gray-600 font-semibold mt-4">
                         {{ this.data.country.confirmed }}
                     </p>
-                    <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
+                    <p class="text-baase text-gray-700 font-extrabold uppercase leading-none">
                         Confirmed
                     </p>
                 </div>
 
                 <div v-if="data.country.recovered">
-                    <p class="text-2xl text-gray-600 font-semibold mt-4">
+                    <p class="text-3xl text-gray-600 font-semibold mt-4">
                         {{ this.data.country.recovered }}
                     </p>
-                    <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
+                    <p class="text-baase text-gray-700 font-extrabold uppercase leading-none">
                         Recovered
                     </p>
                 </div>
 
                 <div v-if="data.country.deaths">
-                    <p class="text-2xl text-gray-600 font-semibold mt-4">
+                    <p class="text-3xl text-gray-600 font-semibold mt-4">
                         {{ this.data.country.deaths }}
                     </p>
-                    <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
+                    <p class="text-baase text-gray-700 font-extrabold uppercase leading-none">
                         Deaths
                     </p>
                 </div>

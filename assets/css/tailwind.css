@@ -10,7 +10,7 @@ body {
 }
 
 main {
-    @apply bg-white;
+    @apply bg-gray-200;
     background-image: url("~assets/img/main-bg-alpha.svg");
     background-repeat: repeat;
     background-size: 198px 110px;

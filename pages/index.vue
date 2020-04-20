@@ -3,7 +3,7 @@
         <HeaderNav />
         <div class="w-full h-screen-math px-16 grid grid-cols-12 gap-4">
             <div class="col-span-8">
-                <h1 class="text-6xl font-extrabold text-martinique-500 mt-16">
+                <h1 class="text-6xl font-extrabold text-martinique-500 mt-12">
                     Local COVID-19 info for:
                 </h1>
                 <form class="w-full max-w-2xl">
