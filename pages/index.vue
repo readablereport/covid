@@ -19,7 +19,7 @@
                     </div>
                 </form>
                 <div id="stats" v-if="hasSelectedLocation">
-                    <stats :data="stats" />
+                    <stats :stats="stats" />
                 </div>
                 <div class="news" v-if="hasSelectedLocation">
                     <rss-feed :city="city" :state="state" />
@@ -84,6 +84,7 @@ export default {
                     },
                 },
                 stats: {
+                    isLoading: false,
                     county,
                     state,
                     country,
@@ -132,6 +133,7 @@ export default {
     methods: {
         async fetchStats() {
             try {
+                this.stats.isLoading = true;
                 let { data } = await this.$axios.get(`/api/stats?county=${this.county}&state=${this.state}`);
                 let { county, state, country } = data.data;
                 this.stats.county = county;
@@ -146,7 +148,7 @@ export default {
                     },
                 });
 
-                // setVal
+                this.stats.isLoading = false;
             } catch (e) {
                 console.error(e);
                 console.log("Failed to fetch stats");
