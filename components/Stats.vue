@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-start justify-between mt-10 relative z-10" v-if="!stats.isLoading">
+    <div class="flex items-start justify-between mt-10 relative z-10" v-if="isLoading">
         <!-- County -->
         <div class="bg-melrose-800 rounded-sm w-1/3 p-8 shadow shadow-md text-center">
             <p
@@ -101,7 +101,11 @@ export default {
             required: true,
         },
     },
-    // watch: {},
+    computed: {
+        isLoading() {
+            return this.stats.isLoading;
+        },
+    },
     methods: {
         clean(stat) {
             if (stat === 0) {
