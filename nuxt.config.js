@@ -165,15 +165,8 @@ export default {
     modules: ["@nuxtjs/axios", "@nuxtjs/proxy", "@nuxtjs/dotenv"],
 
     axios: {
-        proxy: false,
-        baseURL: "https://readable.report",
+        browserBaseURL: API_URL,
     },
-    // proxy: {
-    //     "/api/": {
-    //         target: API_URL,
-    //         pathRewrite: { "^/api/": "" },
-    //     },
-    // },
 
     /*
      ** Build configuration
