@@ -122,7 +122,15 @@ export default {
                 this.stats.county = county;
                 this.stats.state = state;
                 this.stats.country = country;
+
+                this.$router.push({
+                    query: {
+                        county: this.county,
+                        state: this.state,
+                    },
+                });
             } catch (e) {
+                console.error(e);
                 console.log("Failed to fetch stats");
             }
         },
