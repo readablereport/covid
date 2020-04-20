@@ -1,7 +1,7 @@
 <template>
     <div>
         <HeaderNav />
-        <div class="w-full px-16 grid grid-cols-12 gap-4">
+        <div class="w-full h-screen-math px-16 grid grid-cols-12 gap-4">
             <div class="col-span-8">
                 <h1 class="text-6xl font-extrabold text-martinique-500 mt-16">
                     Local COVID-19 info for:
@@ -211,4 +211,8 @@ export default {
     },
 };
 </script>
-<style></style>
+<style>
+.h-screen-math {
+	min-height: calc(100vh - 16rem);
+}
+</style>
