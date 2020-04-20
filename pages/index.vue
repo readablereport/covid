@@ -18,93 +18,11 @@
                         />
                     </div>
                 </form>
-                <div
-                    id="stats"
-                    class="flex items-start justify-between mt-12 -mr-12 relative z-10"
-                    v-if="hasSelectedLocation"
-                >
-                    <div class="bg-gray-200 rounded-md w-1/3 p-8 shadow shadow-lg text-center">
-                        <p
-                            class="text-xl text-melrose-600 font-extrabold capitalize leading-none pb-4 border-b-2 border-gray-300"
-                        >
-                            {{ this.stats.country.label }}
-                        </p>
-                        <div>
-                            <p class="text-2xl text-gray-600 font-semibold mt-4">
-                                {{ this.stats.country.confirmed }}
-                            </p>
-                            <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
-                                Confirmed
-                            </p>
-                            <p class="text-2xl text-gray-600 font-semibold mt-4">
-                                {{ this.stats.country.recovered }}
-                            </p>
-                            <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
-                                Recovered
-                            </p>
-                            <p class="text-2xl text-gray-600 font-semibold mt-4">
-                                {{ this.stats.country.deaths }}
-                            </p>
-                            <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
-                                Deaths
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-200 rounded-md w-1/3 mx-8 p-8 shadow shadow-lg text-center">
-                        <p
-                            class="text-xl text-melrose-600 font-extrabold capitalize leading-none pb-4 border-b-2 border-gray-300"
-                        >
-                            {{ this.stats.state.label }}
-                        </p>
-                        <div>
-                            <p class="text-2xl text-gray-600 font-semibold mt-4">
-                                {{ this.stats.state.confirmed }}
-                            </p>
-                            <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
-                                Confirmed
-                            </p>
-                            <p class="text-2xl text-gray-600 font-semibold mt-4">
-                                {{ this.stats.state.recovered }}
-                            </p>
-                            <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
-                                Recovered
-                            </p>
-                            <p class="text-2xl text-gray-600 font-semibold mt-4">
-                                {{ this.stats.state.deaths }}
-                            </p>
-                            <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
-                                Deaths
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-200 rounded-md w-1/3 p-8 shadow shadow-lg text-center">
-                        <p
-                            class="text-xl text-melrose-600 font-extrabold capitalize leading-none pb-4 border-b-2 border-gray-300"
-                        >
-                            {{ this.stats.county.label }} County
-                        </p>
-                        <div>
-                            <p class="text-2xl text-gray-600 font-semibold mt-4">
-                                {{ this.stats.county.confirmed }}
-                            </p>
-                            <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
-                                Confirmed
-                            </p>
-                            <p class="text-2xl text-gray-600 font-semibold mt-4">
-                                {{ this.stats.county.recovered }}
-                            </p>
-                            <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
-                                Recovered
-                            </p>
-                            <p class="text-2xl text-gray-600 font-semibold mt-4">
-                                {{ this.stats.county.deaths }}
-                            </p>
-                            <p class="text-sm text-gray-700 font-extrabold uppercase leading-none">
-                                Deaths
-                            </p>
-                        </div>
-                    </div>
+
+                <div id="stats" v-if="hasSelectedLocation">
+                    <stats :data="stats" />
                 </div>
+
                 <div class="news" v-if="hasSelectedLocation">
                     <rss-feed :city="city" :state="state" />
                 </div>
@@ -135,13 +53,15 @@
 </template>
 <script>
 import HeaderNav from "~/components/HeaderNav";
-import FooterNav from "~/components/FooterNav";
 import PlacesInput from "~/components/PlacesInput";
+import Stats from "~/components/Stats";
 import RSSFeed from "~/components/RSSFeed";
+import FooterNav from "~/components/FooterNav";
 
 export default {
     components: {
         PlacesInput,
+        Stats,
         "rss-feed": RSSFeed,
         HeaderNav,
         FooterNav,
