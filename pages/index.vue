@@ -1,12 +1,12 @@
 <template>
 	<div>
 		<HeaderNav />
-		<div class="w-full h-screen-math px-16 grid grid-cols-12 gap-4">
-			<div class="col-span-8">
+		<div class="h-screen-math flex">
+			<div class="w-2/3 pl-10">
 				<h1 class="text-6xl font-extrabold text-martinique-500 mt-12">
 					Local COVID-19 info for:
 				</h1>
-				<form class="w-full">
+				<form class="w-full pr-10">
 					<div class="flex items-center border-b-4 border-gray-400 py-2 z-10">
 						<places-input v-model="places.value" :options="places.options" @onChange="handleLocationChange" @onSuggestions="handleOnSuggestions" @onClear="handleOnClear" @onCursorchanged="handleOnCursorchanged" />
 					</div>
@@ -18,8 +18,8 @@
 					<rss-feed :city="city" :state="state" />
 				</div>
 			</div>
-			<div class="col-span-4">
-				<div id="map-wrap" class="w-full h-screen fixed top-0 z-0">
+			<div class="w-1/3">
+				<div id="map-wrap" class="w-screen-map-1-3 h-screen fixed top-0 z-0">
 					<l-map @resize="onResizeMap" :zoom="zoom" :center="[40.6936, -89.589]" :options="{ scrollWheelZoom: false }" ref="map">
 						<l-tile-layer url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png" attribution="Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors" subdomains="abcd" minZoom="0" maxZoom="20" ext="png"></l-tile-layer>
 					</l-map>
@@ -218,6 +218,10 @@ export default {
 <style>
 .h-screen-math {
 	min-height: calc(100vh - 16rem);
+}
+
+.w-screen-map-1-3 {
+	width: calc(100vw / 3);
 }
 
 .leaflet-top .leaflet-control {

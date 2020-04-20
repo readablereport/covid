@@ -30,4 +30,11 @@ a:hover {
 a.nuxt-link-active {
 	@apply cursor-default text-melrose-200;
 }
+
+nav {
+	background-image: url('~assets/img/header-bg.svg');
+	background-repeat: repeat-x;
+	background-position: top;
+	background-attachment: fixed;
+}
 </style>
