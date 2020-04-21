@@ -1,6 +1,6 @@
 <template>
 	<footer class="w-100 px-10 bg-martinique-500 relative z-10">
-		<div class="max-w-screen-xl mx-auto h-32 flex items-center justify-start">
+		<div class="h-32 flex items-center justify-start">
 			<img class="h-12" src="~assets/img/readable-report-icon-light.svg" alt="">
 		</div>
 	</footer>

@@ -6,28 +6,32 @@
 @tailwind components;
 
 body {
-    @apply antialiased bg-martinique-500;
+	@apply antialiased bg-martinique-500 font-sans
 }
 
 main {
-    @apply bg-white;
-    background-image: url("~assets/img/main-bg-alpha.svg");
-    background-repeat: repeat;
-    background-size: 198px 110px;
-    background-attachment: fixed;
+	@apply bg-white;
+	background-image: url("~assets/img/main-bg-alpha.svg");
+	background-repeat: repeat;
+	background-size: 198px 110px;
+	background-attachment: fixed;
 }
 
 .crr--card {
-	@apply bg-melrose-800 rounded-sm w-1/3 p-6 pb-8 shadow shadow-md text-center;
+	@apply bg-melrose-800 rounded-sm w-1/3 p-6 pb-8 shadow shadow-lg text-center;
 	background-image: url("~assets/img/card-bg.svg");
-    background-repeat: repeat;
-    background-size: 99px 55px;
-    background-attachment: fixed;
-    background-blend-mode: difference;
+	background-repeat: repeat;
+	background-size: 99px 55px;
+	background-attachment: fixed;
+	background-blend-mode: difference;
 }
 
 .crr--card:nth-of-type(2) {
 	@apply mx-6;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
 }
 
 @tailwind utilities;

@@ -1,7 +1,7 @@
 <template>
     <div>
         <HeaderNav />
-        <div class="h-screen-math flex">
+        <div class="crr--h-screen-minus-header-footer flex">
             <div class="w-2/3 pl-10">
                 <h1 class="text-6xl font-extrabold text-martinique-500 mt-12">
                     Local COVID-19 info for:
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="w-1/3">
-                <div id="map-wrap" class="w-screen-map-1-3 h-screen fixed top-0 z-0">
+                <div id="map-wrap" class="crr--w-screen-1-3-map h-screen fixed top-0 z-0">
                     <l-map
                         @resize="onResizeMap"
                         :zoom="zoom"
@@ -237,11 +237,11 @@ export default {
 };
 </script>
 <style>
-.h-screen-math {
+.crr--h-screen-minus-header-footer {
     min-height: calc(100vh - 16rem);
 }
 
-.w-screen-map-1-3 {
+.crr--w-screen-1-3-map {
     width: calc(100vw / 3);
 }
 
