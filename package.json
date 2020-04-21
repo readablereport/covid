@@ -1,6 +1,6 @@
 {
     "name": "readable-report-covid",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Open source static site for local Covid 19 data",
     "author": "Readable Report",
     "private": true,
