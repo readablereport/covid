@@ -23,3 +23,4 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 # TODO
 
+-   Format the dates in the news section based on the location entered
