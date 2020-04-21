@@ -21,6 +21,9 @@
                 <div id="stats" v-if="hasSelectedLocation">
                     <stats :stats="stats" />
                 </div>
+                <div id="line-chart" v-if="hasSelectedLocation">
+                    <line-chart :timeSeriesData="stats.timeSeries" />
+                </div>
                 <div class="news" v-if="hasSelectedLocation">
                     <rss-feed :city="city" :state="state" />
                 </div>
@@ -53,6 +56,7 @@
 import HeaderNav from "~/components/HeaderNav";
 import PlacesInput from "~/components/PlacesInput";
 import Stats from "~/components/Stats";
+import LineChart from "~/components/LineChart";
 import RSSFeed from "~/components/RSSFeed";
 import FooterNav from "~/components/FooterNav";
 
@@ -60,6 +64,7 @@ export default {
     components: {
         PlacesInput,
         Stats,
+        LineChart,
         "rss-feed": RSSFeed,
         HeaderNav,
         FooterNav,
@@ -72,7 +77,8 @@ export default {
     async asyncData({ query, $axios }) {
         if (query.city && query.county && query.state) {
             let { data } = await $axios.get(`/stats?county=${query.county}&state=${query.state}`);
-            let { county, state, country } = data.data;
+            console.log(data.data);
+            let { county, state, country, timeSeries } = data.data;
 
             return {
                 places: {
@@ -88,6 +94,7 @@ export default {
                     county,
                     state,
                     country,
+                    timeSeries,
                 },
             };
         }
@@ -111,6 +118,7 @@ export default {
                 county: {},
                 state: {},
                 country: {},
+                timeSeries: [],
             },
         };
     },
