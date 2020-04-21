@@ -1,6 +1,8 @@
-require("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
 
-const API_URL = process.env.API_URL || "https://dm8eqjt1q0.execute-api.us-east-2.amazonaws.com/dev";
+const API_URL = process.env.API_URL || "/";
 
 export default {
     env: {
@@ -162,10 +164,10 @@ export default {
     /*
      ** Nuxt.js modules
      */
-    modules: ["@nuxtjs/axios", "@nuxtjs/proxy", "@nuxtjs/dotenv"],
+    modules: ["@nuxtjs/axios", "@nuxtjs/dotenv"],
 
     axios: {
-        browserBaseURL: API_URL,
+        // browserBaseURL: API_URL,
     },
 
     /*
