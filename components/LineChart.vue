@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full mt-16">
+    <div class="m-16">
         <no-ssr>
             <c-line :data="data"></c-line>
         </no-ssr>
@@ -8,24 +8,33 @@
 
 <script>
 export default {
+    props: {
+        timeSeriesData: {
+            type: Array,
+            required: true,
+        },
+    },
     data() {
+        let labels = this.timeSeriesData.map((item) => item.date.replace("-2020", ""));
+        let confirmed = this.timeSeriesData.map((item) => item.confirmed);
+        let deaths = this.timeSeriesData.map((item) => item.deaths);
+
         return {
             data: {
-                labels: [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                ],
+                labels: labels,
                 datasets: [
                     {
-                        label: "My First dataset",
-                        backgroundColor: "#FF0000",
-                        borderColor: "#FF0000",
-                        data: [2, 17, 25, 4, 57, 52, 19],
+                        label: "Confirmed",
+                        // backgroundColor: "#ff00ff",
+                        borderColor: "#ff00ff",
+                        data: confirmed,
+                        fill: false,
+                    },
+                    {
+                        label: "Deaths",
+                        // backgroundColor: "#2a2b4d",
+                        borderColor: "#2a2b4d",
+                        data: deaths,
                         fill: false,
                     },
                 ],
