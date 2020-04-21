@@ -1,9 +1,14 @@
 {
     "name": "readable-report-covid",
-    "version": "2.0.0",
+    "version": "0.0.1",
     "description": "Open source static site for local Covid 19 data",
     "author": "Readable Report",
-    "private": true,
+    "private": false,
+    "homepage": "https://github.com/readablereport/covid#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/readablereport/covid.git"
+    },
     "scripts": {
         "dev": "nuxt",
         "build": "nuxt build",
