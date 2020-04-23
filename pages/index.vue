@@ -1,68 +1,60 @@
 <template>
-    <div>
-        <HeaderNav />
-        <div class="crr--h-screen-minus-header-footer flex">
-            <div class="w-2/3 pl-10">
-                <h1 class="text-6xl font-extrabold text-martinique-500 mt-12">
-                    Local COVID-19 info for:
-                </h1>
-                <form class="w-full pr-10" @submit.prevent>
-                    <div class="flex items-center border-b-4 border-gray-400 py-2 z-10">
-                        <places-input
-                            v-model="places.value"
-                            :options="places.options"
-                            @onChange="handleLocationChange"
-                            @onSuggestions="handleOnSuggestions"
-                            @onClear="handleOnClear"
-                            @onCursorchanged="handleOnCursorchanged"
-                        />
-                    </div>
-                </form>
-                <div id="stats" v-if="hasSelectedLocation">
-                    <stats :stats="stats" />
+    <div class="crr--h-screen-minus-header-footer flex">
+        <div class="w-2/3 pl-10">
+            <h1 class="text-6xl font-extrabold text-martinique-500 mt-12">
+                Local COVID-19 info for:
+            </h1>
+            <form class="w-full pr-10" @submit.prevent>
+                <div class="flex items-center border-b-4 border-gray-400 py-2 z-10">
+                    <places-input
+                        v-model="places.value"
+                        :options="places.options"
+                        @onChange="handleLocationChange"
+                        @onSuggestions="handleOnSuggestions"
+                        @onClear="handleOnClear"
+                        @onCursorchanged="handleOnCursorchanged"
+                    />
                 </div>
-                <div class="news" v-if="hasSelectedLocation">
-                    <rss-feed :city="city" :state="state" />
-                </div>
+            </form>
+            <div id="stats" v-if="hasSelectedLocation">
+                <stats :stats="stats" />
             </div>
-            <div class="w-1/3">
-                <div id="map-wrap" class="crr--w-screen-1-3-map h-screen fixed top-0 z-0">
-                    <l-map
-                        @resize="onResizeMap"
-                        :zoom="zoom"
-                        :center="[40.6936, -89.589]"
-                        :options="{ scrollWheelZoom: false }"
-                        ref="map"
-                    >
-                        <l-tile-layer
-                            url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png"
-                            attribution="Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
-                            subdomains="abcd"
-                            minZoom="0"
-                            maxZoom="20"
-                            ext="png"
-                        ></l-tile-layer>
-                    </l-map>
-                </div>
+            <div class="news" v-if="hasSelectedLocation">
+                <rss-feed :city="city" :state="state" />
             </div>
         </div>
-        <FooterNav />
+        <div class="w-1/3">
+            <div id="map-wrap" class="crr--w-screen-1-3-map h-screen fixed top-0 z-0">
+                <l-map
+                    @resize="onResizeMap"
+                    :zoom="zoom"
+                    :center="[40.6936, -89.589]"
+                    :options="{ scrollWheelZoom: false }"
+                    ref="map"
+                >
+                    <l-tile-layer
+                        url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png"
+                        attribution="Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
+                        subdomains="abcd"
+                        minZoom="0"
+                        maxZoom="20"
+                        ext="png"
+                    ></l-tile-layer>
+                </l-map>
+            </div>
+        </div>
     </div>
 </template>
 <script>
-import HeaderNav from "~/components/HeaderNav";
 import PlacesInput from "~/components/PlacesInput";
 import Stats from "~/components/Stats";
 import RSSFeed from "~/components/RSSFeed";
-import FooterNav from "~/components/FooterNav";
 
 export default {
     components: {
         PlacesInput,
         Stats,
         "rss-feed": RSSFeed,
-        HeaderNav,
-        FooterNav,
     },
     mounted() {
         this.$nextTick(() => {

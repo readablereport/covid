@@ -1,9 +1,20 @@
 <template>
     <main>
+        <header-nav />
         <nuxt />
+        <footer-nav />
     </main>
 </template>
 
-<style>
+<script>
+import HeaderNav from "~/components/HeaderNav";
+import FooterNav from "~/components/FooterNav";
 
-</style>
+export default {
+    components: {
+        HeaderNav,
+        FooterNav,
+    },
+};
+</script>
+
