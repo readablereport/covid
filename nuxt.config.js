@@ -2,7 +2,7 @@ if (process.env.NODE_ENV !== "production") {
     require("dotenv").config();
 }
 
-const API_URL = process.env.API_URL || "/";
+const API_URL = process.env.API_URL;
 
 export default {
     env: {
@@ -167,7 +167,7 @@ export default {
     modules: ["@nuxtjs/axios", "@nuxtjs/dotenv"],
 
     axios: {
-        // browserBaseURL: API_URL,
+        browserBaseURL: API_URL,
     },
 
     /*

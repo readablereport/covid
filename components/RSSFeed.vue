@@ -66,7 +66,7 @@ export default {
         async fetchFeed() {
             try {
                 if (this.city && this.state) {
-                    let response = await this.$axios.get(`/api/news?city=${this.city}&state=${this.state}`);
+                    let response = await this.$axios.get(`/news?city=${this.city}&state=${this.state}`);
                     this.items = response.data.data;
                 }
             } catch (e) {

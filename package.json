@@ -13,7 +13,9 @@
         "dev": "nuxt",
         "build": "nuxt build",
         "start": "nuxt start",
-        "generate": "nuxt generate"
+        "generate": "nuxt generate",
+        "preview": "npx netlify dev",
+        "release": "npx release-it"
     },
     "dependencies": {
         "@nuxtjs/axios": "5.9.7",
