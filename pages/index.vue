@@ -77,7 +77,6 @@ export default {
     async asyncData({ query, $axios }) {
         if (query.city && query.county && query.state) {
             let { data } = await $axios.get(`/stats?county=${query.county}&state=${query.state}`);
-            console.log(data.data);
             let { county, state, country, timeSeries } = data.data;
 
             return {
@@ -144,10 +143,11 @@ export default {
             try {
                 this.stats.isLoading = true;
                 let { data } = await this.$axios.get(`/stats?county=${this.county}&state=${this.state}`);
-                let { county, state, country } = data.data;
+                let { county, state, country, timeSeries } = data.data;
                 this.stats.county = county;
                 this.stats.state = state;
                 this.stats.country = country;
+                this.stats.timeSeries = timeSeries;
                 this.stats.isLoading = false;
 
                 this.$router.push({

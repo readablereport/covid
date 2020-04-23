@@ -1,7 +1,7 @@
 <template>
     <div class="m-16">
         <no-ssr>
-            <c-line :data="data"></c-line>
+            <c-line :chart-data="mapData"></c-line>
         </no-ssr>
     </div>
 </template>
@@ -14,13 +14,26 @@ export default {
             required: true,
         },
     },
+    mounted() {
+        this.fillData(this.timeSeriesData);
+    },
+    watch: {
+        timeSeriesData(newVal, oldVal) {
+            this.fillData(newVal);
+        },
+    },
     data() {
-        let labels = this.timeSeriesData.map((item) => item.date.replace("-2020", ""));
-        let confirmed = this.timeSeriesData.map((item) => item.confirmed);
-        let deaths = this.timeSeriesData.map((item) => item.deaths);
-
         return {
-            data: {
+            mapData: {},
+        };
+    },
+    methods: {
+        fillData(timeSeriesData) {
+            let labels = timeSeriesData.map((item) => item.date.replace("-2020", ""));
+            let confirmed = timeSeriesData.map((item) => item.confirmed);
+            let deaths = timeSeriesData.map((item) => item.deaths);
+
+            this.mapData = {
                 labels: labels,
                 datasets: [
                     {
@@ -38,8 +51,8 @@ export default {
                         fill: false,
                     },
                 ],
-            },
-        };
+            };
+        },
     },
 };
 </script>
