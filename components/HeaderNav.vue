@@ -6,9 +6,9 @@
             </nuxt-link>
             <div class="font-bold uppercase text-sm">
                 <nuxt-link to="/" class="mr-6">local info</nuxt-link>
-                <nuxt-link to="/volunteer-info" class="mr-6">volunteer info</nuxt-link>
-                <nuxt-link to="/info-for-makers" class="mr-6">info for makers</nuxt-link>
-                <nuxt-link to="/how-to-stay-sane">how to stay sane</nuxt-link>
+                <!-- <nuxt-link to="/volunteer-info" class="mr-6">volunteer info</nuxt-link> -->
+                <!-- <nuxt-link to="/info-for-makers" class="mr-6">info for makers</nuxt-link> -->
+                <!-- <nuxt-link to="/how-to-stay-sane">how to stay sane</nuxt-link> -->
             </div>
         </div>
     </nav>
@@ -33,9 +33,9 @@ a.nuxt-link-active {
 }
 
 nav {
-	background-image: url('~assets/img/header-bg.svg');
-	background-repeat: repeat-x;
-	background-position: top;
-	background-attachment: fixed;
+    background-image: url("~assets/img/header-bg.svg");
+    background-repeat: repeat-x;
+    background-position: top;
+    background-attachment: fixed;
 }
 </style>

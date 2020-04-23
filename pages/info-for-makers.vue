@@ -1,6 +1,6 @@
 <template>
     <div class="crr--h-screen-minus-header-footer flex">
-        <h1 class="text-6xl font-extrabold text-martinique-500 mt-12">
+        <h1 class="text-6xl font-extrabold text-martinique-500 mt-12 px-10">
             Info for Makers and DIY enthusiasts
         </h1>
     </div>
