@@ -1,7 +1,7 @@
 <template>
     <div class="m-16">
         <no-ssr>
-            <c-line :chart-data="mapData"></c-line>
+            <c-line :chart-data="mapData" :options="options"></c-line>
         </no-ssr>
     </div>
 </template>
@@ -25,6 +25,10 @@ export default {
     data() {
         return {
             mapData: {},
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            },
         };
     },
     methods: {
