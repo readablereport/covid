@@ -1,5 +1,5 @@
 <template>
-    <div class="m-16">
+    <div>
         <no-ssr>
             <c-line :chart-data="mapData" :options="options"></c-line>
         </no-ssr>
@@ -26,6 +26,10 @@ export default {
         return {
             mapData: {},
             options: {
+                legend: {
+                    position: 'right',
+                    align: 'start',
+                },
                 responsive: true,
                 maintainAspectRatio: false,
             },
@@ -42,17 +46,17 @@ export default {
                 datasets: [
                     {
                         label: "Confirmed",
-                        // backgroundColor: "#ff00ff",
-                        borderColor: "#ff00ff",
+                        backgroundColor: "#898ae64d",
+                        borderColor: "#898ae6",
                         data: confirmed,
-                        fill: false,
+                        fill: true,
                     },
                     {
                         label: "Deaths",
-                        // backgroundColor: "#2a2b4d",
-                        borderColor: "#2a2b4d",
+                        backgroundColor: "#fc0a634d",
+                        borderColor: "#fc0a63",
                         data: deaths,
-                        fill: false,
+                        fill: true,
                     },
                 ],
             };
