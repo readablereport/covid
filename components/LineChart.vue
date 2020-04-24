@@ -1,11 +1,10 @@
 <template>
-    <div>
+    <div class="mt-8 mr-10">
         <no-ssr>
             <c-line :chart-data="mapData" :options="options"></c-line>
         </no-ssr>
     </div>
 </template>
-
 <script>
 export default {
     props: {
@@ -26,9 +25,14 @@ export default {
         return {
             mapData: {},
             options: {
+                title: {
+                    display: true,
+                    position: 'top',
+                    text: 'Custom Chart Title'
+                },
                 legend: {
-                    position: 'right',
-                    align: 'start',
+                    position: 'bottom',
+                    align: 'end',
                 },
                 responsive: true,
                 maintainAspectRatio: false,
@@ -43,10 +47,9 @@ export default {
 
             this.mapData = {
                 labels: labels,
-                datasets: [
-                    {
+                datasets: [{
                         label: "Confirmed",
-                        backgroundColor: "#898ae64d",
+                        backgroundColor: "#898ae61a",
                         borderColor: "#898ae6",
                         data: confirmed,
                         fill: true,
@@ -63,4 +66,5 @@ export default {
         },
     },
 };
+
 </script>

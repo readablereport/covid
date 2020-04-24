@@ -1,5 +1,5 @@
 <template>
-	<div class="flex items-start justify-between mr-10 mt-6">
+	<div class="flex items-start justify-between mr-10 mt-8">
 		<template v-if="isLoading">
 			<p>Loading Stats...</p>
 		</template>
