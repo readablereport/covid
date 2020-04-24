@@ -27,8 +27,8 @@ export default {
             mapData: {},
             options: {
                 legend: {
-                    position: 'right',
-                    align: 'start',
+                    position: "right",
+                    align: "start",
                 },
                 responsive: true,
                 maintainAspectRatio: false,
