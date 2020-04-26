@@ -5,7 +5,7 @@
 				News
 			</h1>
 			<div class="flex flex-wrap">
-				<div v-for="item in items" class="item w-full lg:w-2/3 py-4 pr-8">
+				<div v-for="item in items" class="item w-full lg:w-2/3 py-4 pr-24">
 					<a class="text-xs uppercase font-bold text-indigo-500 no-underline hover:text-indigo-700 transition duration-300 ease-in-out" :href="item.link" target="_blank">{{ item.source }}</a>
 					<!-- <span class="px-1 text-gray-400">&bull;</span> -->
 					<p class="text-xs font-semibold text-gray-600">
