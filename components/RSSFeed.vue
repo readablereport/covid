@@ -18,7 +18,7 @@
                         >
                         <span class="px-1 text-gray-400">&bull;</span>
                         <p class="text-xs font-bold text-gray-600">
-                            {{ item.pubDate }}
+                            {{ formatDate(item.isoDate) }}
                         </p>
                     </div>
                     <p class="text-sm text-gray-700 h-14 mt-1">
@@ -30,8 +30,9 @@
     </div>
 </template>
 <script>
-let Parser = require("rss-parser");
+import Parser from "rss-parser";
 let parser = new Parser();
+import spacetime from "spacetime";
 export default {
     props: {
         city: {
@@ -48,21 +49,24 @@ export default {
     },
     watch: {
         city(newVal, oldVal) {
-            console.log("city changed");
             this.fetchFeed();
         },
         state(newVal, oldVal) {
-            console.log("state changed");
             this.fetchFeed();
         },
     },
 
     data() {
+        let tz = spacetime.now().timezone().name;
         return {
+            tz: tz,
             items: [],
         };
     },
     methods: {
+        formatDate(d) {
+            return spacetime(d, this.tz).format("nice-day");
+        },
         async fetchFeed() {
             try {
                 if (this.city && this.state) {
