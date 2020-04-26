@@ -1,9 +1,9 @@
 <template>
-    <main>
+    <div class="crr--body-bg">
         <header-nav />
         <nuxt />
         <footer-nav />
-    </main>
+    </div>
 </template>
 
 <script>
@@ -17,4 +17,3 @@ export default {
     },
 };
 </script>
-

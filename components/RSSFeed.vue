@@ -1,33 +1,38 @@
 <template>
     <div class="pb-16">
-        <div class="items">
-            <h1 class="text-6xl font-extrabold text-martinique-500 mt-16">
-                News
-            </h1>
-            <div class="flex flex-wrap">
-                <div v-for="item in items" class="item w-1/2 pr-10 py-4">
-                    <h2 class="text-xl font-bold leading-tight truncate text-gray-800">
-                        {{ item.title }}
-                    </h2>
-                    <div class="flex items-center">
-                        <a
-                            class="text-xs uppercase font-bold text-indigo-500 no-underline hover:text-indigo-700 transition duration-300 ease-in-out"
-                            :href="item.link"
-                            target="_blank"
-                            >{{ item.source }}</a
-                        >
-                        <span class="px-1 text-gray-400">&bull;</span>
-                        <p class="text-xs font-bold text-gray-600">
-                            {{ formatDate(item.isoDate) }}
-                        </p>
-                    </div>
-                    <p class="text-sm text-gray-700 h-14 mt-1">
-                        {{ item.content }}
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="items">
+			<h1 class="text-6xl font-extrabold text-martinique-500 mt-16">
+				News
+			</h1>
+			<div class="flex flex-wrap">
+				<div v-for="item in items" class="item w-full lg:w-2/3 py-4 pr-8">
+					<a class="text-xs uppercase font-bold text-indigo-500 no-underline hover:text-indigo-700 transition duration-300 ease-in-out" :href="item.link" target="_blank">{{ item.source }}</a>
+					<!-- <span class="px-1 text-gray-400">&bull;</span> -->
+					<p class="text-xs font-semibold text-gray-600">
+						{{ formatDate(item.isoDate) }}
+					</p>
+					<p class="text-sm text-gray-700 h-14 mt-1">
+						{{ item.title }}
+					</p>
+				</div>
+				<!-- <div v-for="item in items" class="item w-1/2 pr-10 py-4">
+					<h2 class="text-xl font-bold leading-tight truncate text-gray-800">
+						{{ item.title }}
+					</h2>
+					<div class="flex items-center">
+						<a class="text-xs uppercase font-bold text-indigo-500 no-underline hover:text-indigo-700 transition duration-300 ease-in-out" :href="item.link" target="_blank">{{ item.source }}</a>
+						<span class="px-1 text-gray-400">&bull;</span>
+						<p class="text-xs font-bold text-gray-600">
+							{{ item.pubDate }}
+						</p>
+					</div>
+					<p class="text-sm text-gray-700 h-14 mt-1">
+						{{ item.content }}
+					</p>
+				</div> -->
+			</div>
+		</div>
+	</div>
 </template>
 <script>
 import Parser from "rss-parser";

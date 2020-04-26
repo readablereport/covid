@@ -1,5 +1,5 @@
 <template>
-	<input class="appearance-none bg-transparent border-none w-full h-16 text-5xl font-light text-gray-600 mr-3 px-4 focus:outline-none" type="search" placeholder="your location" :value="value" @input="updateValue($event.target.value)" />
+	<input class="appearance-none bg-transparent border-none w-full h-16 text-3xl md:text-5xl font-light text-gray-600 focus:outline-none" type="search" placeholder="your location" :value="value" @input="updateValue($event.target.value)" />
 </template>
 <script>
 import L from "leaflet";
@@ -64,22 +64,18 @@ export default {
 
 	methods: {
 		updateValue(value) {
-			console.log("places value changed");
 			this.$emit("input", value);
 		},
 
 		onSuggestions(e) {
-			console.log("places onSuggestions");
 			this.$emit("onSuggestions", e);
 		},
 
 		onCursorChanged(e) {
-			console.log("places onCursorChanged");
 			this.$emit("onCursorChanged", e);
 		},
 
 		onChange(e) {
-			console.log("places onChange");
 			this.$emit("onChange", e);
 			let { name, administrative } = e.suggestion;
 
@@ -87,13 +83,11 @@ export default {
 		},
 
 		onClear(e) {
-			console.log("places onClear");
 			this.$emit("onClear");
 			this.updateValue(null);
 		},
 
 		onError(e) {
-			console.log("places onError");
 			this.$emit("onError", e.message);
 		},
 	},
