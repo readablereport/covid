@@ -14,10 +14,6 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
-<<<<<<< HEAD
-        "preview": "npx netlify dev",
-=======
->>>>>>> feature-line-chart
         "release": "npx release-it"
     },
     "dependencies": {

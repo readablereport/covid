@@ -1,36 +1,32 @@
 <template>
-	<div>
-		<HeaderNav />
-		<main class="crr--h-screen-minus-header flex">
-			<section class="w-screen lg:w-2/3 px-8 lg:px-12">
-				<h1 class="text-4xl md:text-5xl font-extrabold text-martinique-500 mt-8 md:mt-10">
-					Local COVID-19 info for:
-				</h1>
-				<form class="w-full" @submit.prevent>
-					<div class="flex items-center border-b-4 border-gray-400 py-2 z-10">
-						<places-input v-model="places.value" :options="places.options" @onChange="handleLocationChange" @onSuggestions="handleOnSuggestions" @onClear="handleOnClear" @onCursorchanged="handleOnCursorchanged" />
-					</div>
-				</form>
-				<div id="stats" v-if="hasSelectedLocation">
-					<stats :stats="stats" />
+	<main class="crr--h-screen-minus-header flex">
+		<section class="w-screen lg:w-2/3 px-8 lg:px-12">
+			<h1 class="text-4xl md:text-5xl font-extrabold text-martinique-500 mt-8 md:mt-10">
+				Local COVID-19 info for:
+			</h1>
+			<form class="w-full" @submit.prevent>
+				<div class="flex items-center border-b-4 border-gray-400 py-2 z-10">
+					<places-input v-model="places.value" :options="places.options" @onChange="handleLocationChange" @onSuggestions="handleOnSuggestions" @onClear="handleOnClear" @onCursorchanged="handleOnCursorchanged" />
 				</div>
-				<div id="line-chart" v-if="hasSelectedLocation">
-					<line-chart :timeSeriesData="stats.timeSeries" />
-				</div>
-				<div class="news" v-if="hasSelectedLocation">
-					<rss-feed :city="city" :state="state" />
-				</div>
-			</section>
-			<div class="hidden lg:block lg:w-1/3">
-				<div id="map-wrap" class="crr--w-screen-1-3-map h-screen fixed top-0 z-0">
-					<l-map @resize="onResizeMap" :zoom="zoom" :center="[40.6936, -89.589]" :options="{ scrollWheelZoom: false }" ref="map">
-						<l-tile-layer url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png" attribution="Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors" subdomains="abcd" minZoom="0" maxZoom="20" ext="png"></l-tile-layer>
-					</l-map>
-				</div>
+			</form>
+			<div id="stats" v-if="hasSelectedLocation">
+				<stats :stats="stats" />
 			</div>
-		</main>
-		<FooterNav />
-	</div>
+			<div id="line-chart" v-if="hasSelectedLocation">
+				<line-chart :timeSeriesData="stats.timeSeries" />
+			</div>
+			<div class="news" v-if="hasSelectedLocation">
+				<rss-feed :city="city" :state="state" />
+			</div>
+		</section>
+		<div class="hidden lg:block lg:w-1/3">
+			<div id="map-wrap" class="crr--w-screen-1-3-map h-screen fixed top-0 z-0">
+				<l-map @resize="onResizeMap" :zoom="zoom" :center="[40.6936, -89.589]" :options="{ scrollWheelZoom: false }" ref="map">
+					<l-tile-layer url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png" attribution="Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors" subdomains="abcd" minZoom="0" maxZoom="20" ext="png"></l-tile-layer>
+				</l-map>
+			</div>
+		</div>
+	</main>
 </template>
 <script>
 import HeaderNav from "~/components/HeaderNav";
