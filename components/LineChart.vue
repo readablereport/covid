@@ -1,8 +1,13 @@
 <template>
-    <div class="mt-8 mr-10">
-        <no-ssr>
-            <c-line :chart-data="mapData" :options="options"></c-line>
-        </no-ssr>
+    <div class="mt-12">
+        <h2 class="text-center font-bold text-lg text-martinique-400">
+            variable.county.label COUNTY DATA OVER THE PREVIOUS TWO WEEKS
+        </h2>
+        <div class="mt-3">
+            <no-ssr>
+                <c-line :chart-data="mapData" :options="options"></c-line>
+            </no-ssr>
+        </div>
     </div>
 </template>
 <script>
@@ -25,12 +30,7 @@ export default {
         return {
             mapData: {},
             options: {
-                title: {
-                    display: true,
-                    position: 'top',
-                    text: 'Custom Chart Title'
-                },
-                legend: {
+               legend: {
                     position: 'bottom',
                     align: 'end',
                 },
@@ -48,7 +48,7 @@ export default {
             this.mapData = {
                 labels: labels,
                 datasets: [{
-                        label: "Confirmed",
+                        label: "Confirmed Cases",
                         backgroundColor: "#898ae61a",
                         borderColor: "#898ae6",
                         data: confirmed,

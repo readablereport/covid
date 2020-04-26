@@ -1,5 +1,5 @@
 <template>
-	<div class="flex items-start justify-between mr-10 mt-8">
+	<div class="flex flex-wrap md:flex-no-wrap items-start justify-center md:justify-between mt-8">
 		<template v-if="isLoading">
 			<p>Loading Stats...</p>
 		</template>
@@ -10,19 +10,19 @@
 					{{ this.stats.county.label }} County
 				</p>
 				<div>
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
+					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.county.confirmed) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
 						Confirmed
 					</p>
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
+					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.county.recovered) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
 						Recovered
 					</p>
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
+					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.county.deaths) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
@@ -36,19 +36,19 @@
 					{{ this.stats.state.label }}
 				</p>
 				<div>
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
+					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.state.confirmed) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
 						Confirmed
 					</p>
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
+					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.state.recovered) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
 						Recovered
 					</p>
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
+					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.state.deaths) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
@@ -62,19 +62,19 @@
 					{{ this.stats.country.label }}
 				</p>
 				<div>
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
+					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.country.confirmed) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
 						Confirmed
 					</p>
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
+					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.country.recovered) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
 						Recovered
 					</p>
-					<p class="text-3xl text-melrose-200 font-semibold mt-4">
+					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.country.deaths) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">

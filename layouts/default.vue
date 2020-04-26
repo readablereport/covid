@@ -1,9 +1,7 @@
 <template>
-    <main>
-        <nuxt />
-    </main>
+	<div class="crr--body-bg">
+		<nuxt />
+	</div>
 </template>
-
 <style>
-
 </style>
