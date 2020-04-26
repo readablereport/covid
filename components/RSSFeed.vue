@@ -69,6 +69,8 @@ export default {
     data() {
         let tz = spacetime.now().timezone().name;
         return {
+            source: "google",
+            daysToFetch: 7,
             tz: tz,
             items: [],
         };
@@ -80,7 +82,9 @@ export default {
         async fetchFeed() {
             try {
                 if (this.city && this.state) {
-                    let response = await this.$axios.get(`/news?city=${this.city}&state=${this.state}`);
+                    let response = await this.$axios.get(
+                        `/news?city=${this.city}&state=${this.state}&source=${this.source}&daysAgo=${this.daysToFetch}`
+                    );
                     this.items = response.data.data;
                 }
             } catch (e) {
