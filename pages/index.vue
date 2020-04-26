@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<HeaderNav />
-		<div class="crr--h-screen-minus-header flex">
+		<main class="crr--h-screen-minus-header flex">
 			<div class="w-screen lg:w-2/3 px-8 lg:px-12">
 				<h1 class="text-4xl md:text-5xl font-extrabold text-martinique-500 mt-8 md:mt-10">
 					Local COVID-19 info for:
@@ -28,7 +28,7 @@
 					</l-map>
 				</div>
 			</div>
-		</div>
+		</main>
 		<FooterNav />
 	</div>
 </template>

@@ -37,5 +37,6 @@ nav {
 	background-repeat: repeat-x;
 	background-position: top;
 	background-attachment: fixed;
+    mix-blend-mode: multiply;
 }
 </style>

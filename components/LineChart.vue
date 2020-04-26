@@ -1,7 +1,7 @@
 <template>
-	<div class="mt-12">
-		<h2 class="text-center font-bold text-lg text-martinique-700">
-			variable.county.label COUNTY DATA OVER THE PREVIOUS TWO WEEKS
+	<div class="mt-20">
+		<h2 class="text-center font-bold text-lg text-martinique-400">
+			variable.county.label County Data Over The Previous Two Weeks
 		</h2>
 		<div class="mt-3">
 			<no-ssr>
