@@ -4,7 +4,7 @@
 ![Prerequisite](https://img.shields.io/badge/node-%3E%3D12.x-blue.svg)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/readablereport/covid#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/readablereport/covid/graphs/commit-activity)
-[![License: MIT](https://img.shields.io/github/license/readablereport/readable-report-covid)](https://github.com/readablereport/covid/LICENSE)
+[![License: MIT](https://img.shields.io/github/license/readablereport/readable-report-covid)](https://github.com/readablereport/covid/blob/master/LICENSE)
 
 > Open source static site for local Covid 19 data
 
