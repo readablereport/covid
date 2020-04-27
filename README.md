@@ -6,13 +6,7 @@
 
 > Open source static site for local Covid 19 data
 
-### 🏠 [Homepage](https://github.com/readablereport/covid#readme)
-
-### ✨ [Demo](https://covid.readable.report)
-
-## Prerequisites
-
--   node >=12.x
+### [Live Site](https://covid.readable.report)
 
 ## Build Setup
 
@@ -33,18 +27,11 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
-## Usage
-
-```sh
-npm run dev
-```
-
 ## Author
 
 👤 **Readable Report**
 
 -   Website: https://readable.report/
--   Github: [@readablereport](https://github.com/readablereport)
 
 ## 🤝 Contributing
 
