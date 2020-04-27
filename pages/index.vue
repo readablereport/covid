@@ -128,6 +128,9 @@ export default {
             if (this.places.selected.county) {
                 return this.places.selected.county.replace("County", "").trim();
             }
+            if (this.places.selected.name === "New York") {
+                return "New York City";
+            }
             return "";
         },
         state() {
