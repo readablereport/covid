@@ -3,6 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const API_URL = process.env.API_URL;
+const GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID;
 
 export default {
     env: {
@@ -164,10 +165,14 @@ export default {
     /*
      ** Nuxt.js modules
      */
-    modules: ["@nuxtjs/axios", "@nuxtjs/dotenv"],
+    modules: ["@nuxtjs/axios", "@nuxtjs/google-analytics", "@nuxtjs/dotenv"],
 
     axios: {
         browserBaseURL: API_URL,
+    },
+
+    googleAnalytics: {
+        id: GOOGLE_ANALYTICS_ID,
     },
 
     /*
