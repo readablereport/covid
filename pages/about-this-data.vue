@@ -1,10 +1,10 @@
 <template>
 	<main class="crr--h-screen-minus-header flex">
 		<section class="w-full md:w-2/3 mx-auto px-8 lg:px-16">
-			<h1 class="text-4xl font-extrabold text-martinique-500 mt-8 md:mt-10">
+			<h1 class="text-4xl font-extrabold text-martinique-500 mt-8 md:mt-16">
 				Local COVID-19 statistics data
 			</h1>
-			<h2 class="text-2xl font-bold text-melrose-700">
+			<h2 class="text-2xl font-extrabold text-melrose-700">
 				About this data
 			</h2>
 			<h3 class="text-xl font-bold text-gray-700 mt-8">
