@@ -35,11 +35,12 @@ img {
 }
 
 nav {
-	background-image: url('~assets/img/header-bg.svg');
+	background-image: url('~assets/img/header-bg.png');
 	background-repeat: repeat-x;
 	background-position: top;
 	background-attachment: fixed;
 	mix-blend-mode: multiply;
+	background-size: 2049px 130px;
 }
 
 </style>

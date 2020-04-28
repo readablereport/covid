@@ -14,11 +14,12 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 footer {
-	background-image: url('~assets/img/footer-bg.svg');
+	background-image: url('~assets/img/footer-bg.png');
 	background-repeat: repeat-x;
 	box-shadow: inset 0 30px 60px rgba(30, 30, 50, 0.5);
 	background-position: bottom;
 	background-attachment: fixed;
+	background-size: 2049px 141px; 
 }
 
 .crr--body-bg {
