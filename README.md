@@ -1,3 +1,11 @@
+<div align="center">
+  <img alt="Covid-19 logo" src="https://raw.githubusercontent.com/readablereport/covid/master/static/covid19-rr.jpg"/>
+</div>
+
+<div align="center">
+  <p><strong>Local Covid-19 Stats & News</strong></p>
+</div>
+
 # Readable Report Covid-19
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
