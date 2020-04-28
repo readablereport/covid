@@ -2,7 +2,7 @@
 
 Thanks for your interest in the project. Bugs filed and PRs submitted are appreciated!
 
-Please make sure you're familiar with and follow the instructions in the contributing guidelines (found in the CONTRIBUTING.md file).
+Please make sure you're familiar with and follow the instructions in the [contributing guidelines](https://github.com/readablereport/covid/blob/master/CONTRIBUTING.md) (found in the CONTRIBUTING.md file).
 
 Please fill out the information below to expedite the review and (hopefully) merge of your pull request!
 
@@ -47,6 +47,6 @@ To check an item, place an "x" in the box like so: "- [x] Documentation"
 -   [ ] Documentation
 -   [ ] Tests
 -   [ ] In your opinion, is this ready to be merged as soon as it's reviewed?
--   [ ] I have read the **[CONTRIBUTING](https://github.com/GabrielDuarteM/generator-gd-scripts/blob/master/CONTRIBUTING.md)** document.
+-   [ ] I have read the **[CONTRIBUTING](https://github.com/readablereport/covid/blob/master/CONTRIBUTING.md)** document.
 
 feel free to add additional comments

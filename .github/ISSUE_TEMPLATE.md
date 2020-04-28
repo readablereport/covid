@@ -1,8 +1,9 @@
-# Type
+# Type: ie `New Feature`, `Bugfix`, or `Documentation fix`
 
-> ie: `New Feature`, `Bugfix`, or `Documentation fix`.
+## Description
 
-# Description
+Talk about your issue or feature
 
-> Talk about your issue
+## Environment
 
+If relevant, discuss what version of relevant software you are using. Ex: Node v12.x, Firefox, MacOS.
