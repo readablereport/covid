@@ -31,7 +31,7 @@ a.nuxt-link-active {
 }
 
 img {
-	width: 50%;
+	width: 445px;
 }
 
 nav {
