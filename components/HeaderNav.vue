@@ -2,7 +2,7 @@
 	<nav class="w-100 bg-martinique-500 relative z-10 pr-16">
 		<div class="h-32 flex items-center justify-between overflow-hidden">
 			<nuxt-link to="/">
-				<img src="~/assets/img/logo.svg" class="self-center" alt="Covid 19 Stats" />
+				<img src="~/assets/img/logo.png" class="self-center" alt="Covid 19 Stats" />
 			</nuxt-link>
 			<!-- <div class="font-bold uppercase text-sm">
 				<nuxt-link to="/" class="mr-6">local info</nuxt-link>
@@ -30,12 +30,17 @@ a.nuxt-link-active {
 	@apply cursor-default text-melrose-200;
 }
 
+img {
+	width: 50%;
+}
+
 nav {
-	background-image: url('~assets/img/header-bg.svg');
+	background-image: url('~assets/img/header-bg.png');
 	background-repeat: repeat-x;
 	background-position: top;
 	background-attachment: fixed;
 	mix-blend-mode: multiply;
+	background-size: 2049px 130px;
 }
 
 </style>
