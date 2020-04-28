@@ -1,18 +1,28 @@
 <div align="center">
-  <img alt="Covid-19 logo" src="https://raw.githubusercontent.com/readablereport/covid/master/static/covid19-rr.jpg"/>
+    <img alt="Covid-19 logo" src="https://raw.githubusercontent.com/readablereport/covid/master/static/covid19-rr.jpg" />
 </div>
 
 <div align="center">
-  <p><strong>Local Covid-19 Stats & News</strong></p>
+    <p><strong>Local Covid-19 Stats &amp; News</strong></p>
 </div>
 
-# Readable Report Covid-19
+<div align="center">
+    <p>
+        <a href="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000">
+            <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" alt="Version" style="max-width: 100%;" />
+        </a>
+        <a href="https://github.com/readablereport/covid/blob/master/LICENSE">
+            <img src="https://img.shields.io/github/license/readablereport/covid" alt="MIT License" style="max-width: 100%;" />
+        </a>
+        <a href="https://github.com/readablereport/covid/issues">
+            <img src="https://img.shields.io/github/issues/readablereport/covid" alt="Issues" style="max-width: 100%;" />
+        </a>
+    </p>
+</div>
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
-[![GitHub license](https://img.shields.io/github/license/readablereport/covid)](https://github.com/readablereport/covid/blob/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/readablereport/covid)](https://github.com/readablereport/covid/issues)
-
-> The overall goal of this project is to make a data hub for a community (city, town, village).
+<div align="center">
+    <p>The overall goal of this project is to make a data hub for a community (city, town, village).</p>
+</div>
 
 ### [Live Site](https://covid.readable.report)
 
