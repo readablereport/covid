@@ -20,11 +20,9 @@
     </p>
 </div>
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
-[![GitHub license](https://img.shields.io/github/license/readablereport/covid)](https://github.com/readablereport/covid/blob/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/readablereport/covid)](https://github.com/readablereport/covid/issues)
-
-> The overall goal of this project is to make a data hub for a community (city, town, village).
+<div align="center">
+    <p>The overall goal of this project is to make a data hub for a community (city, town, village).</p>
+</div>
 
 ### [Live Site](https://covid19.readable.report)
 
