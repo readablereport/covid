@@ -6,7 +6,7 @@
 @tailwind components;
 
 body {
-	@apply antialiased bg-martinique-500 font-sans
+	@apply antialiased font-sans;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -19,15 +19,7 @@ footer {
 	box-shadow: inset 0 30px 60px rgba(30, 30, 50, 0.5);
 	background-position: bottom;
 	background-attachment: fixed;
-	background-size: 2049px 141px; 
-}
-
-.crr--body-bg {
-	@apply bg-white;
-	background-image: url("~assets/img/main-bg-alpha.svg");
-	background-repeat: repeat;
-	background-size: 198px 110px;
-	background-attachment: fixed;
+	background-size: 2049px 141px;
 }
 
 .crr--card {
@@ -44,11 +36,29 @@ footer {
 }
 
 .crr--h-screen-minus-header {
+	@apply bg-white;
+	background-image: url("~assets/img/main-bg-alpha.svg");
+	background-repeat: repeat;
+	background-size: 198px 110px;
+	background-attachment: fixed;
 	min-height: calc(100vh - 8rem);
+	background-color: #fff;
+	position: relative;
+	z-index: 20;
 }
 
 .crr--w-screen-1-3-map {
 	width: calc(100vw / 3);
+}
+
+.feather {
+	width: 24px;
+	height: 24px;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: none;
 }
 
 @screen md {

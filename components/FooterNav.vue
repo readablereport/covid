@@ -1,5 +1,5 @@
 <template>
-	<footer class="w-100 px-5 md:px-10 bg-martinique-500 relative z-10">
+	<footer class="w-screen lg:w-2/3 px-5 md:px-10 bg-martinique-500 relative z-10">
 		<div class="h-32 flex flex-wrap pt-3 md:pt-0 md:flex-no-wrap md:items-center md:justify-between">
 			<div class="w-1/4">
 				<a href="https://readable.report/">

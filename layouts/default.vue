@@ -1,5 +1,5 @@
 <template>
-    <div class="crr--body-bg">
+    <div>
         <header-nav />
         <nuxt />
         <footer-nav />

@@ -1,7 +1,7 @@
 <template>
 	<main class="crr--h-screen-minus-header flex">
-		<section class="w-screen lg:w-2/3 px-8 lg:px-12">
-			<h1 class="text-4xl md:text-5xl font-extrabold text-martinique-500 mt-8 md:mt-10">
+		<section class="w-screen lg:w-2/3 px-8 lg:px-12 border-l-8 border-r-8 border-martinique-500">
+			<h1 class="text-4xl md:text-5xl font-extrabold text-martinique-500 mt-8 md:mt-8">
 				Local COVID-19 info for:
 			</h1>
 			<form class="w-full" @submit.prevent>
