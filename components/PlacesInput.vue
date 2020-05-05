@@ -1,6 +1,6 @@
 <template>
     <input
-        class="appearance-none bg-transparent border-none w-full h-16 text-3xl md:text-4xl font-light text-gray-600 focus:outline-none"
+        class="appearance-none bg-transparent border-none w-full h-16 text-3xl md:text-5xl font-medium text-gray-600 focus:outline-none"
         type="search"
         placeholder="enter your location"
         :value="value"

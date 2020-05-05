@@ -1,7 +1,7 @@
 <template>
     <div class="mt-20">
-        <h2 class="text-center font-bold text-lg text-martinique-400">
-            {{ county }} County Data Over The Previous Two Weeks
+        <h2 class="text-center font-semibold text-lg text-martinique-400 uppercase">
+            {{ county }} county data over the previous two weeks
         </h2>
         <div class="mt-3">
             <no-ssr>
@@ -37,6 +37,14 @@ export default {
                     position: "bottom",
                     align: "end",
                 },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
                 responsive: true,
                 maintainAspectRatio: false,
             },
@@ -50,8 +58,7 @@ export default {
 
             this.mapData = {
                 labels: labels,
-                datasets: [
-                    {
+                datasets: [{
                         label: "Confirmed Cases",
                         backgroundColor: "#898ae61a",
                         borderColor: "#898ae6",
@@ -70,4 +77,5 @@ export default {
         },
     },
 };
+
 </script>

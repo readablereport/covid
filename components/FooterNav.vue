@@ -1,5 +1,5 @@
 <template>
-	<footer class="w-100 px-5 md:px-10 bg-martinique-500 relative z-10">
+	<footer class="w-screen px-5 md:px-10 bg-martinique-500 relative z-30">
 		<div class="h-32 flex flex-wrap pt-3 md:pt-0 md:flex-no-wrap md:items-center md:justify-between">
 			<div class="w-1/4">
 				<a href="https://readable.report/">
@@ -30,7 +30,7 @@
 							<nuxt-link to="/about-this-data" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-l bg-martinique-500 hover:bg-melrose-800">
 								The data
 							</nuxt-link>
-							<a href="/downloads/COVID19-local-tracker-media.zip" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-l bg-martinique-500 hover:bg-melrose-800">
+							<a href="/downloads/COVID19-local-tracker-media.zip" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 bg-martinique-500 hover:bg-melrose-800">
 								Media kit
 							</a>
 							<nuxt-link to="/privacy" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-r bg-martinique-500 hover:bg-melrose-800">

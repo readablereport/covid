@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-wrap md:flex-no-wrap items-start justify-center md:justify-between mt-8">
+	<div class="flex flex-wrap md:flex-no-wrap items-start justify-center md:justify-between mt-12">
 		<template v-if="isLoading">
 			<p>Loading Stats...</p>
 		</template>
@@ -19,10 +19,10 @@
 						Confirmed
 					</p>
 					<p class="text-3xl text-white font-semibold mt-4">
-						{{ this.clean(this.stats.county.recovered) }}
+						{{ this.clean(this.stats.county.active) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Recovered
+						Active
 					</p>
 					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.county.deaths) }}
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<!-- State -->
-			<div class="crr--card">
+			<div class="crr--card relative">
 				<div class="flex justify-center items-center border-b-2 border-melrose-600 h-16">
 					<p class="text-xl text-melrose-200 font-extrabold uppercase leading-none">
 						{{ this.stats.state.label }}
@@ -96,13 +96,13 @@ export default {
 	props: {
 		stats: {
 			type: Object,
-			required: true,
-		},
+			required: true
+		}
 	},
 	computed: {
 		isLoading() {
 			return this.stats.isLoading;
-		},
+		}
 	},
 	methods: {
 		clean(stat) {
@@ -114,8 +114,7 @@ export default {
 				return "N/A";
 			}
 			return stat;
-		},
-	},
+		}
+	}
 };
-
 </script>
