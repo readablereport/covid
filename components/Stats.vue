@@ -19,10 +19,8 @@
 						Confirmed
 					</p>
 					<p class="text-3xl text-white font-semibold mt-4">
-						{{ this.clean(this.stats.county.recovered) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Recovered
 					</p>
 					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.county.deaths) }}
@@ -96,13 +94,13 @@ export default {
 	props: {
 		stats: {
 			type: Object,
-			required: true,
-		},
+			required: true
+		}
 	},
 	computed: {
 		isLoading() {
 			return this.stats.isLoading;
-		},
+		}
 	},
 	methods: {
 		clean(stat) {
@@ -114,8 +112,7 @@ export default {
 				return "N/A";
 			}
 			return stat;
-		},
-	},
+		}
+	}
 };
-
 </script>

@@ -28,13 +28,13 @@ import spacetime from "spacetime";
 export default {
     props: {
         city: {
-            type: String,
+            type: String
             // required: true,
         },
         state: {
-            type: String,
+            type: String
             // required: true,
-        },
+        }
     },
     mounted() {
         this.fetchFeed();
@@ -45,7 +45,7 @@ export default {
         },
         state(newVal, oldVal) {
             this.fetchFeed();
-        },
+        }
     },
 
     data() {
@@ -54,7 +54,7 @@ export default {
             source: "google",
             daysToFetch: 7,
             tz: tz,
-            items: [],
+            items: []
         };
     },
     methods: {
@@ -72,7 +72,7 @@ export default {
             } catch (e) {
                 console.log("Failed to load the news feed");
             }
-        },
-    },
+        }
+    }
 };
 </script>
