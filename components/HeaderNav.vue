@@ -1,8 +1,8 @@
 <template>
-	<nav class="w-100 bg-martinique-500 relative z-10 pr-16">
-		<div class="h-32 flex items-center justify-between overflow-hidden">
+	<header class="w-screen px-2 bg-martinique-500 relative overflow-hidden z-30">
+		<div class="h-32 flex items-center justify-between">
 			<nuxt-link to="/">
-				<img src="~/assets/img/logo.png" class="self-center" alt="Covid 19 Stats" />
+				<img  class="cursor-pointer" src="~/assets/img/logo.png" alt="Covid 19 Stats" />
 			</nuxt-link>
 			<!-- <div class="font-bold uppercase text-sm">
 				<nuxt-link to="/" class="mr-6">local info</nuxt-link>
@@ -11,7 +11,7 @@
 				<nuxt-link to="/how-to-stay-sane">how to stay sane</nuxt-link>
 			</div> -->
 		</div>
-	</nav>
+	</header>
 </template>
 <script></script>
 <style scoped lang="css">
@@ -34,13 +34,13 @@ img {
 	width: 445px;
 }
 
-nav {
+header {
 	background-image: url('~assets/img/header-bg.png');
 	background-repeat: repeat-x;
 	background-position: top;
 	background-attachment: fixed;
-	mix-blend-mode: multiply;
 	background-size: 2049px 130px;
+	/*mix-blend-mode: multiply;*/
 }
 
 </style>

@@ -99,6 +99,13 @@ module.exports = {
 					900: '#104a22',
 				},
 			},
+			borderWidth: {
+				'10': '10px',
+				'12': '12px',
+				'14': '14px',
+				'18': '18px',
+				'20': '20px',
+			},
 			fontFamily: {
 				sans: [
 					'"Open Sans"', ...defaultTheme.fontFamily.sans

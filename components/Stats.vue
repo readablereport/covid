@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-wrap md:flex-no-wrap items-start justify-center md:justify-between mt-8">
+	<div class="flex flex-wrap md:flex-no-wrap items-start justify-center md:justify-between mt-12">
 		<template v-if="isLoading">
 			<p>Loading Stats...</p>
 		</template>
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<!-- State -->
-			<div class="crr--card">
+			<div class="crr--card relative">
 				<div class="flex justify-center items-center border-b-2 border-melrose-600 h-16">
 					<p class="text-xl text-melrose-200 font-extrabold uppercase leading-none">
 						{{ this.stats.state.label }}
