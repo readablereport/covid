@@ -6,7 +6,7 @@
 			</h1>
 			<div class="flex flex-wrap">
 				<div v-for="item in items" class="item w-full lg:w-1/2 pr-0 lg:pr-10 py-4">
-					<a class="text-sm uppercase font-bold text-indigo-500 no-underline hover:text-indigo-700 transition duration-300 ease-in-out" :href="item.link" target="_blank">
+					<a class="text-xs uppercase font-extrabold text-indigo-500 no-underline hover:text-indigo-700 transition duration-300 ease-in-out" :href="item.link" target="_blank">
 						{{ item.source }}
 					</a>
 					<p class="text-xs font-semibold text-gray-500">

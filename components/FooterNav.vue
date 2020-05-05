@@ -30,7 +30,7 @@
 							<nuxt-link to="/about-this-data" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-l bg-martinique-500 hover:bg-melrose-800">
 								The data
 							</nuxt-link>
-							<a href="/downloads/COVID19-local-tracker-media.zip" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-l bg-martinique-500 hover:bg-melrose-800">
+							<a href="/downloads/COVID19-local-tracker-media.zip" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 bg-martinique-500 hover:bg-melrose-800">
 								Media kit
 							</a>
 							<nuxt-link to="/privacy" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-r bg-martinique-500 hover:bg-melrose-800">

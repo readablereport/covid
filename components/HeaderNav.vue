@@ -1,8 +1,8 @@
 <template>
-	<header class="w-screen px-2 bg-martinique-500 relative z-30">
+	<header class="w-screen px-2 bg-martinique-500 relative overflow-hidden z-30">
 		<div class="h-32 flex items-center justify-between">
 			<nuxt-link to="/">
-				<img src="~/assets/img/logo.png" alt="Covid 19 Stats" />
+				<img  class="cursor-pointer" src="~/assets/img/logo.png" alt="Covid 19 Stats" />
 			</nuxt-link>
 			<!-- <div class="font-bold uppercase text-sm">
 				<nuxt-link to="/" class="mr-6">local info</nuxt-link>
