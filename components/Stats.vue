@@ -19,10 +19,10 @@
 						Confirmed
 					</p>
 					<p class="text-3xl text-white font-semibold mt-4">
-						{{ this.clean(this.stats.county.recovered) }}
+						{{ this.clean(this.stats.county.active) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
-						Recovered
+						Active
 					</p>
 					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.county.deaths) }}
@@ -34,7 +34,9 @@
 			</div>
 			<!-- State -->
 			<div class="crr--card relative">
-				<span class="absolute inline-block bg-flamenco-400 text-flamenco-900 border-2 border-white px-3 leading-relaxed rounded-full top-0 right-0 w-24 -mt-4 -mr-4">
+				<span
+					class="absolute inline-block bg-flamenco-400 text-flamenco-900 border-2 border-white px-3 leading-relaxed rounded-full top-0 right-0 w-24 -mt-4 -mr-4"
+				>
 					<span class="flex content-center justify-around">
 						<span>
 							<span class="text-sm font-extrabold">1.8</span>
@@ -118,13 +120,13 @@ export default {
 	props: {
 		stats: {
 			type: Object,
-			required: true,
-		},
+			required: true
+		}
 	},
 	computed: {
 		isLoading() {
 			return this.stats.isLoading;
-		},
+		}
 	},
 	methods: {
 		clean(stat) {
@@ -136,8 +138,7 @@ export default {
 				return "N/A";
 			}
 			return stat;
-		},
-	},
+		}
+	}
 };
-
 </script>
