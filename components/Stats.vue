@@ -19,8 +19,10 @@
 						Confirmed
 					</p>
 					<p class="text-3xl text-white font-semibold mt-4">
+						{{ this.clean(this.stats.county.active) }}
 					</p>
 					<p class="text-base text-melrose-300 font-extrabold uppercase leading-none">
+						Active
 					</p>
 					<p class="text-3xl text-white font-semibold mt-4">
 						{{ this.clean(this.stats.county.deaths) }}
