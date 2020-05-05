@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg-melrose-500">
         <header-nav />
         <nuxt />
         <footer-nav />

@@ -1,8 +1,8 @@
 <template>
-	<header class="w-screen lg:w-2/3 px-2 bg-martinique-500 relative z-20">
-		<div class="h-32 flex items-center justify-between overflow-hidden">
+	<header class="w-screen px-2 bg-martinique-500 relative z-30">
+		<div class="h-32 flex items-center justify-between">
 			<nuxt-link to="/">
-				<img src="~/assets/img/logo.png" class="self-center fixed" alt="Covid 19 Stats" />
+				<img src="~/assets/img/logo.png" alt="Covid 19 Stats" />
 			</nuxt-link>
 			<!-- <div class="font-bold uppercase text-sm">
 				<nuxt-link to="/" class="mr-6">local info</nuxt-link>
@@ -32,7 +32,6 @@ a.nuxt-link-active {
 
 img {
 	width: 445px;
-	top: -30px;
 }
 
 header {
@@ -41,6 +40,7 @@ header {
 	background-position: top;
 	background-attachment: fixed;
 	background-size: 2049px 130px;
+	/*mix-blend-mode: multiply;*/
 }
 
 </style>

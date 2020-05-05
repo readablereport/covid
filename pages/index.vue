@@ -1,11 +1,11 @@
 <template>
 	<main class="crr--h-screen-minus-header flex">
-		<section class="w-screen lg:w-2/3 px-8 lg:px-12 border-l-8 border-r-8 border-martinique-500">
+		<section class="w-screen lg:w-2/3 px-8 lg:px-12">
 			<h1 class="text-4xl md:text-5xl font-extrabold text-martinique-500 mt-8 md:mt-8">
 				Local COVID-19 info for:
 			</h1>
 			<form class="w-full" @submit.prevent>
-				<div class="flex items-center border-b-4 border-gray-400 py-2 z-10">
+				<div class="flex items-center border-b-4 border-gray-400 py-2">
 					<places-input v-model="places.value" :options="places.options" @onChange="handleLocationChange" @onSuggestions="handleOnSuggestions" @onClear="handleOnClear" @onCursorchanged="handleOnCursorchanged" />
 				</div>
 			</form>
@@ -20,9 +20,9 @@
 			</div>
 		</section>
 		<div class="hidden lg:block lg:w-1/3">
-			<div id="map-wrap" class="crr--w-screen-1-3-map h-screen fixed top-0 z-0">
+			<div id="map-wrap" class="crr--w-screen-1-3-map h-screen fixed top-0 bg-martinique-500">
 				<l-map @resize="onResizeMap" :zoom="zoom" :center="[40.6936, -89.589]" :options="{ scrollWheelZoom: false }" ref="map">
-					<l-tile-layer url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png" attribution="Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors" subdomains="abcd" minZoom="0" maxZoom="20" ext="png"></l-tile-layer>
+					<l-tile-layer url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png" attribution="Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors" subdomains="abcd" minZoom="0" maxZoom="20" ext="png"></l-tile-layer>
 				</l-map>
 			</div>
 		</div>
@@ -225,6 +225,10 @@ export default {
 
 </script>
 <style>
+.vue2leaflet-map {
+	mix-blend-mode: screen;
+}
+
 .leaflet-top .leaflet-control {
 	margin-top: 160px;
 }

@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-wrap md:flex-no-wrap items-start justify-center md:justify-between mt-8">
+	<div class="flex flex-wrap md:flex-no-wrap items-start justify-center md:justify-between mt-12">
 		<template v-if="isLoading">
 			<p>Loading Stats...</p>
 		</template>
@@ -34,8 +34,8 @@
 			</div>
 			<!-- State -->
 			<div class="crr--card relative">
-				<span class="absolute inline-block bg-flamenco-400 text-flamenco-900 border-2 border-white px-2 py-1 leading-relaxed rounded-full top-0 right-0 w-24 -mt-6 -mr-4">
-					<span class="flex items-center justify-around">
+				<span class="absolute inline-block bg-flamenco-400 text-flamenco-900 border-2 border-white px-3 leading-relaxed rounded-full top-0 right-0 w-24 -mt-4 -mr-4">
+					<span class="flex content-center justify-around">
 						<span>
 							<span class="text-sm font-extrabold">1.8</span>
 							<span class="text-xs font-bold">R<sub>t</sub></span>
