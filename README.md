@@ -8,7 +8,7 @@
 
 <div align="center">
     <p>
-        <a href="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000">
+        <a href="https://img.shields.io/badge/version-1.0.0-green.svg?cacheSeconds=2592000">
             <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" alt="Version" style="max-width: 100%;" />
         </a>
         <a href="https://github.com/readablereport/covid/blob/master/LICENSE">
