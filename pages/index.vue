@@ -227,6 +227,7 @@ export default {
 <style>
 .vue2leaflet-map {
 	mix-blend-mode: screen;
+	background-color: #000;
 }
 
 .leaflet-top .leaflet-control {
