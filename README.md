@@ -8,7 +8,7 @@
 
 <div align="center">
     <p>
-        <a href="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000">
+        <a href="https://img.shields.io/badge/version-1.0.0-green.svg?cacheSeconds=2592000">
             <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" alt="Version" style="max-width: 100%;" />
         </a>
         <a href="https://github.com/readablereport/covid/blob/master/LICENSE">
@@ -26,9 +26,9 @@
 
 <div align="center">
     <p>
-        <a href="https://covid19.readable.report" target="_blank">Live Site</a>
-        <a href="#install">Install</a>
-        <a href="#setup">Setup</a>
+        <a href="https://covid19.readable.report" target="_blank">Live Site</a> | 
+        <a href="#install">Install</a> | 
+        <a href="#setup">Setup</a> | 
         <a href="#-contributing">Contribute</a>
     </p>
 </div>
@@ -56,7 +56,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 If you want to run the full site locally, you'll need to setup Environment Variables by creating a `.env` file at the root of the project with the contents:
 
-```
+```bash
 NODE_ENV=dev
 PLACES_APP_ID=XXXXXXXXXXXX
 PLACES_API_KEY=XXXXXXXXXXXX
