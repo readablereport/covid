@@ -24,7 +24,14 @@
     <p>The overall goal of this project is to make a data hub for a community (city, town, village).</p>
 </div>
 
-### [Live Site](https://covid19.readable.report)
+<div align="center">
+    <p>
+        <a href="https://covid19.readable.report" target="_blank">Live Site</a>
+        <a href="#install">Install</a>
+        <a href="#setup">Setup</a>
+        <a href="#-contributing">Contribute</a>
+    </p>
+</div>
 
 ## Install
 
