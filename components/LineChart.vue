@@ -14,12 +14,12 @@
 export default {
     props: {
         county: {
-            type: String,
+            type: String
         },
         timeSeriesData: {
             type: Array,
-            required: true,
-        },
+            required: true
+        }
     },
     mounted() {
         this.fillData(this.timeSeriesData);
@@ -27,7 +27,7 @@ export default {
     watch: {
         timeSeriesData(newVal, oldVal) {
             this.fillData(newVal);
-        },
+        }
     },
     data() {
         return {
@@ -35,47 +35,55 @@ export default {
             options: {
                 legend: {
                     position: "bottom",
-                    align: "end",
+                    align: "end"
                 },
                 tooltips: {
-                    mode: 'index',
-                    intersect: false,
+                    mode: "index",
+                    intersect: false
                 },
                 hover: {
-                    mode: 'nearest',
+                    mode: "nearest",
                     intersect: true
                 },
                 responsive: true,
-                maintainAspectRatio: false,
-            },
+                maintainAspectRatio: false
+            }
         };
     },
     methods: {
         fillData(timeSeriesData) {
-            let labels = timeSeriesData.map((item) => item.date.replace("-2020", ""));
-            let confirmed = timeSeriesData.map((item) => item.confirmed);
-            let deaths = timeSeriesData.map((item) => item.deaths);
+            let labels = timeSeriesData.map(item => item.date.replace("-2020", ""));
+            let confirmed = timeSeriesData.map(item => item.confirmed);
+            let active = timeSeriesData.map(item => item.active);
+            let deaths = timeSeriesData.map(item => item.deaths);
 
             this.mapData = {
                 labels: labels,
-                datasets: [{
+                datasets: [
+                    {
                         label: "Confirmed Cases",
                         backgroundColor: "#898ae61a",
                         borderColor: "#898ae6",
                         data: confirmed,
-                        fill: true,
+                        fill: true
                     },
+                    // {
+                    //     label: "Active Cases",
+                    //     backgroundColor: "#FF0000",
+                    //     borderColor: "#FF0000",
+                    //     data: active,
+                    //     fill: true
+                    // },
                     {
                         label: "Deaths",
                         backgroundColor: "#fc0a634d",
                         borderColor: "#fc0a63",
                         data: deaths,
-                        fill: true,
-                    },
-                ],
+                        fill: true
+                    }
+                ]
             };
-        },
-    },
+        }
+    }
 };
-
 </script>

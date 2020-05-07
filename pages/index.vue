@@ -6,7 +6,14 @@
 			</h1>
 			<form class="w-full" @submit.prevent>
 				<div class="flex items-center border-b-4 border-gray-400 py-2">
-					<places-input v-model="places.value" :options="places.options" @onChange="handleLocationChange" @onSuggestions="handleOnSuggestions" @onClear="handleOnClear" @onCursorchanged="handleOnCursorchanged" />
+					<places-input
+						v-model="places.value"
+						:options="places.options"
+						@onChange="handleLocationChange"
+						@onSuggestions="handleOnSuggestions"
+						@onClear="handleOnClear"
+						@onCursorchanged="handleOnCursorchanged"
+					/>
 				</div>
 			</form>
 			<div id="stats" v-if="hasSelectedLocation">
@@ -21,8 +28,21 @@
 		</section>
 		<div class="hidden lg:block lg:w-1/3">
 			<div id="map-wrap" class="crr--w-screen-1-3-map h-screen fixed top-0 bg-martinique-500">
-				<l-map @resize="onResizeMap" :zoom="zoom" :center="[40.6936, -89.589]" :options="{ scrollWheelZoom: false }" ref="map">
-					<l-tile-layer url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png" attribution="Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors" subdomains="abcd" minZoom="0" maxZoom="20" ext="png"></l-tile-layer>
+				<l-map
+					@resize="onResizeMap"
+					:zoom="zoom"
+					:center="[40.6936, -89.589]"
+					:options="{ scrollWheelZoom: false }"
+					ref="map"
+				>
+					<l-tile-layer
+						url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
+						attribution="Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> - Map data © <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
+						subdomains="abcd"
+						minZoom="0"
+						maxZoom="20"
+						ext="png"
+					></l-tile-layer>
 				</l-map>
 			</div>
 		</div>
@@ -43,7 +63,7 @@ export default {
 		LineChart,
 		"rss-feed": RSSFeed,
 		HeaderNav,
-		FooterNav,
+		FooterNav
 	},
 	mounted() {
 		this.$nextTick(() => {
@@ -61,16 +81,16 @@ export default {
 					selected: {
 						name: query.city,
 						county: query.county,
-						administrative: query.state,
-					},
+						administrative: query.state
+					}
 				},
 				stats: {
 					isLoading: false,
 					county,
 					state,
 					country,
-					timeSeries,
-				},
+					timeSeries
+				}
 			};
 		}
 	},
@@ -83,18 +103,18 @@ export default {
 			places: {
 				options: {
 					appId: process.env.PLACES_APP_ID,
-					apiKey: process.env.PLACES_API_KEY,
+					apiKey: process.env.PLACES_API_KEY
 				},
 				value: null,
-				selected: {},
+				selected: {}
 			},
 			stats: {
 				isLoading: false,
 				county: {},
 				state: {},
 				country: {},
-				timeSeries: [],
-			},
+				timeSeries: []
+			}
 		};
 	},
 	computed: {
@@ -115,7 +135,7 @@ export default {
 		},
 		state() {
 			return this.places.selected.administrative;
-		},
+		}
 	},
 	methods: {
 		async fetchStats() {
@@ -133,8 +153,8 @@ export default {
 					query: {
 						city: this.city,
 						county: this.county,
-						state: this.state,
-					},
+						state: this.state
+					}
 				});
 			} catch (e) {
 				console.error(e);
@@ -147,7 +167,7 @@ export default {
 			this.stats.country = {};
 			this.places.selected = {};
 			this.$router.push({
-				query: null,
+				query: null
 			});
 		},
 		onResizeMap() {
@@ -217,12 +237,11 @@ export default {
 			var featureGroup = L.featureGroup(this.markers);
 			this.map.fitBounds(featureGroup.getBounds().pad(0.5), {
 				animate: false,
-				maxZoom: 13,
+				maxZoom: 13
 			});
-		},
-	},
+		}
+	}
 };
-
 </script>
 <style>
 .vue2leaflet-map {
@@ -233,5 +252,4 @@ export default {
 .leaflet-top .leaflet-control {
 	margin-top: 160px;
 }
-
 </style>
