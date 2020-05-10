@@ -69,8 +69,8 @@ export default {
                     },
                     // {
                     //     label: "Active Cases",
-                    //     backgroundColor: "#FF0000",
-                    //     borderColor: "#FF0000",
+                    //     backgroundColor: "#ebfef1",
+                    //     borderColor: "#104a22",
                     //     data: active,
                     //     fill: true
                     // },
