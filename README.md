@@ -73,6 +73,14 @@ Contributions, issues and feature requests are welcome!
 
 Feel free to check [issues page](https://github.com/readablereport/covid/issues). You can also use the labels to sort by [feature](https://github.com/readablereport/covid/labels/enhancement) or [bug](https://github.com/readablereport/covid/labels/bug). We also have a [contributing guide](https://github.com/readablereport/covid/blob/master/CONTRIBUTING.md) you can look at.
 
+### Steps
+
+1. Fork it
+2. Create your feature branch: git checkout -b my-new-feature
+3. Commit your changes: git commit -am 'Add some feature'
+4. Push to the branch: git push origin my-new-feature
+5. Submit a pull request
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!

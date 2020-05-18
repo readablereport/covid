@@ -4,7 +4,7 @@
 			<div class="w-1/4">
 				<a href="https://readable.report/">
 					<span class="text-xs font-bold leading-loose text-melrose-100">powered by</span>
-					<img class="h-16" src="~assets/img/readable-report-icon-light.svg" alt="">
+					<img class="h-16" src="~assets/img/readable-report-icon-light.svg" alt="" />
 				</a>
 			</div>
 			<div class="w-3/4 flex justify-end items-start">
@@ -14,10 +14,18 @@
 							<a class="leading-loose text-melrose-100">data sources</a>
 						</div>
 						<div class="w-full text-right md:text-left">
-							<a href="https://en.wikipedia.org/wiki/Template:2019%E2%80%9320_coronavirus_pandemic_data" target="_blank" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-l bg-martinique-500 hover:bg-melrose-800">
+							<a
+								href="https://en.wikipedia.org/wiki/Template:2019%E2%80%9320_coronavirus_pandemic_data"
+								target="_blank"
+								class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-l bg-martinique-500 hover:bg-melrose-800"
+							>
 								Wikipedia
 							</a>
-							<a href="https://github.com/CSSEGISandData/COVID-19" target="_blank" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-r bg-martinique-500 hover:bg-melrose-800">
+							<a
+								href="https://github.com/CSSEGISandData/COVID-19"
+								target="_blank"
+								class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-r bg-martinique-500 hover:bg-melrose-800"
+							>
 								Johns Hopkins CSSE
 							</a>
 						</div>
@@ -27,15 +35,31 @@
 							<a class="leading-loose text-melrose-100">about</a>
 						</div>
 						<div class="w-full text-right md:text-left">
-							<nuxt-link to="/about-this-data" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-l bg-martinique-500 hover:bg-melrose-800">
+							<nuxt-link
+								to="/about-this-data"
+								class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-l bg-martinique-500 hover:bg-melrose-800"
+							>
 								The data
 							</nuxt-link>
-							<a href="/downloads/COVID19-local-tracker-media.zip" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 bg-martinique-500 hover:bg-melrose-800">
+							<a
+								href="/downloads/COVID19-local-tracker-media.zip"
+								class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 bg-martinique-500 hover:bg-melrose-800"
+							>
 								Media kit
 							</a>
-							<nuxt-link to="/privacy" class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-r bg-martinique-500 hover:bg-melrose-800">
+							<nuxt-link
+								to="/privacy"
+								class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-r bg-martinique-500 hover:bg-melrose-800"
+							>
 								Privacy Policy
 							</nuxt-link>
+							<a
+								href="http://eepurl.com/g3KFk1"
+								target="_blank"
+								class="transition ease-in-out duration-700 text-melrose-300 no-underline px-2 py-1 rounded-r bg-martinique-500 hover:bg-melrose-800"
+							>
+								Subscribe
+							</a>
 						</div>
 					</div>
 				</div>
@@ -43,7 +67,5 @@
 		</div>
 	</footer>
 </template>
-<script>
-</script>
-<style scoped lang="css">
-</style>
+<script></script>
+<style scoped lang="css"></style>

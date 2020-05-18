@@ -49,21 +49,17 @@
 	</main>
 </template>
 <script>
-import HeaderNav from "~/components/HeaderNav";
 import PlacesInput from "~/components/PlacesInput";
 import Stats from "~/components/Stats";
 import LineChart from "~/components/LineChart";
 import RSSFeed from "~/components/RSSFeed";
-import FooterNav from "~/components/FooterNav";
 
 export default {
 	components: {
 		PlacesInput,
 		Stats,
 		LineChart,
-		"rss-feed": RSSFeed,
-		HeaderNav,
-		FooterNav
+		"rss-feed": RSSFeed
 	},
 	mounted() {
 		this.$nextTick(() => {
