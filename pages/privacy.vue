@@ -51,7 +51,7 @@
 				</li>
 				<li>
 					<strong>Website</strong> refers to Readable Report Covid Stats, accessible from
-					https://covid.readable.report/
+					https://covid19.readable.report/
 				</li>
 				<li><strong>Service</strong> refers to the Website.</li>
 				<li><strong>Country</strong> refers to: Illinois, United States</li>
