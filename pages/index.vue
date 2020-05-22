@@ -18,6 +18,24 @@
 			</form>
 			<div id="stats" v-if="hasSelectedLocation">
 				<stats :stats="stats" />
+
+				<div class="mt-2 text-sm">
+					<div class="flex mb-4">
+						<div class="w-1/2">
+							<a :href="shareURL" target="_blank">
+								<img
+									style="width: 1rem; display: inline-block;"
+									src="~assets/img/share-square-regular.svg"
+									alt="Share"
+								/>
+								Share
+							</a>
+						</div>
+						<div class="w-1/2 text-right">
+							<nuxt-link to="/about-this-data">*data sources</nuxt-link>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="line-chart" v-if="hasSelectedLocation">
 				<line-chart :county="county" :timeSeriesData="stats.timeSeries" />
@@ -53,6 +71,8 @@ import PlacesInput from "~/components/PlacesInput";
 import Stats from "~/components/Stats";
 import LineChart from "~/components/LineChart";
 import RSSFeed from "~/components/RSSFeed";
+
+import states from "~/libs/states";
 
 export default {
 	components: {
@@ -131,6 +151,11 @@ export default {
 		},
 		state() {
 			return this.places.selected.administrative;
+		},
+		shareURL() {
+			let county = this.county.toLowerCase();
+			let stateAbbv = states[this.state].toLowerCase();
+			return `https://covidcards.us/latest/${county}/${stateAbbv}`;
 		}
 	},
 	methods: {

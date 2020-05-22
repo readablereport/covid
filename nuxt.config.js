@@ -136,13 +136,13 @@ export default {
                 href: "/favicon-16x16.png",
                 sizes: "16x16"
             }
+        ],
+        script: [
+            {
+                src: "//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js",
+                "data-dojo-config": "usePlainJson: true, isDebug: false"
+            }
         ]
-        // script: [
-        //     {
-        //         src: "//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js",
-        //         "data-dojo-config": "usePlainJson: true, isDebug: false"
-        //     }
-        // ]
     },
     /*
      ** Customize the progress-bar color

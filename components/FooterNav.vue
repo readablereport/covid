@@ -4,7 +4,7 @@
 			<div class="w-1/4">
 				<a href="https://readable.report/">
 					<span class="text-xs font-bold leading-loose text-melrose-100">powered by</span>
-					<img class="h-16" src="~assets/img/readable-report-icon-light.svg" alt="" />
+					<img class="h-16" src="~assets/img/readable-report-icon-light.svg" alt="Logo" />
 				</a>
 			</div>
 			<div class="w-3/4 flex justify-end items-start">
